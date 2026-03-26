@@ -1,35 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TokenCounter matches the snapshot 1`] = `
-<div
-  className="collapse.show token-parent"
->
-  <button
-    className="btn border btn-light border-secondary rounded-lg mx-1 token-counter-aim"
-    onClick={[Function]}
-    title="Helpful text"
-  />
-  <span
-    className="token-count"
+<div>
+  <div
+    class="collapse.show token-parent"
   >
-    3
-  </span>
+    <button
+      class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-aim"
+      title="Helpful text"
+    />
+    <span
+      class="token-count"
+    >
+      3
+    </span>
+  </div>
 </div>
 `;
 
 exports[`TokenCounter matches the snapshot when not visible 1`] = `
-<div
-  className="collapse token-parent"
->
-  <button
-    className="btn border btn-light border-secondary rounded-lg mx-1 token-counter-observe"
-    onClick={[Function]}
-    title="Watching!"
-  />
-  <span
-    className="token-count"
+<div>
+  <div
+    class="collapse token-parent"
   >
-    1
-  </span>
+    <button
+      class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-observe"
+      title="Watching!"
+    />
+    <span
+      class="token-count"
+    >
+      1
+    </span>
+  </div>
 </div>
 `;

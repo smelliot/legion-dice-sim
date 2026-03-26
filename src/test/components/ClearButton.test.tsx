@@ -1,31 +1,28 @@
-import React from 'react';
+import React from "react";
 
-import { shallow } from 'enzyme';
-import { create } from 'react-test-renderer';
+import { render, fireEvent } from "@testing-library/react";
 
-import ClearButton from '../../components/ClearButton';
+import ClearButton from "../../components/ClearButton";
 
-describe('ClearButton', () => {
-    it('matches the snapshot', () => {
-        const onClick = jest.fn();
+describe("ClearButton", () => {
+  it("matches the snapshot", () => {
+    const onClick = jest.fn();
 
-        const counter = <ClearButton
-                onClick={onClick}
-                tooltip='Clear...'
-            ></ClearButton>
-        const snapshot = create(counter);
-        expect(snapshot.toJSON()).toMatchSnapshot();
-    });
+    const { container } = render(
+      <ClearButton onClick={onClick} tooltip="Clear..."></ClearButton>
+    );
+    expect(container).toMatchSnapshot();
+  });
 
-    it('handles being clicked', () => {
-        const onClick = jest.fn();
+  it("handles being clicked", () => {
+    const onClick = jest.fn();
 
-        const wrapper = shallow(<ClearButton
-            onClick={onClick}
-            tooltip='Clear...'
-        ></ClearButton>);
-        wrapper.find('.btn').simulate('click');
+    const { container } = render(
+      <ClearButton onClick={onClick} tooltip="Clear..."></ClearButton>
+    );
+    const btn = container.querySelector(".btn") as HTMLElement;
+    fireEvent.click(btn);
 
-        expect(onClick).toHaveBeenCalledTimes(1);
-    })
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
 });

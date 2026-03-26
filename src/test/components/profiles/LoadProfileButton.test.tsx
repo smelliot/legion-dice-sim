@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render } from "@testing-library/react";
 
-import LoadProfileButton from '../../../components/profiles/LoadProfileButton';
+import LoadProfileButton from "../../../components/profiles/LoadProfileButton";
 
-describe('FactionButtonGroup', () => {
-    it('matches the snapshot', () => {
-        const button = shallow(<LoadProfileButton
-                dialogId='fakeDialog'
-                tooltip='My tooltip'
-            ></LoadProfileButton>);
-        const snapshot = shallowToJson(button);
-        expect(snapshot).toMatchSnapshot();
-    });
+describe("FactionButtonGroup", () => {
+  it("matches the snapshot", () => {
+    const { container } = render(
+      <LoadProfileButton
+        dialogId="fakeDialog"
+        tooltip="My tooltip"
+      ></LoadProfileButton>
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

@@ -1,111 +1,102 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RankButtonGroup matches the snapshot 1`] = `
-<div
-  className="btn-group btn-group-toggle"
-  data-toggle="buttons"
->
-  <label
-    className="btn btn-light rank-label active"
-    title="Commander"
+<div>
+  <div
+    class="btn-group btn-group-toggle"
+    data-toggle="buttons"
   >
-    <input
-      autoComplete="off"
-      checked={true}
-      id="commander"
-      name="rank"
-      onChange={[Function]}
-      type="radio"
-      value="commander"
-    />
-    <img
-      className="commander-rank-img mx-1"
-    />
-  </label>
-  <label
-    className="btn btn-light rank-label"
-    title="Operative"
-  >
-    <input
-      autoComplete="off"
-      checked={false}
-      id="operative"
-      name="rank"
-      onChange={[Function]}
-      type="radio"
-      value="operative"
-    />
-    <img
-      className="operative-rank-img mx-1"
-    />
-  </label>
-  <label
-    className="btn btn-light rank-label"
-    title="Corps"
-  >
-    <input
-      autoComplete="off"
-      checked={false}
-      id="corps"
-      name="rank"
-      onChange={[Function]}
-      type="radio"
-      value="corps"
-    />
-    <img
-      className="corps-rank-img mx-1"
-    />
-  </label>
-  <label
-    className="btn btn-light rank-label"
-    title="Special Forces"
-  >
-    <input
-      autoComplete="off"
-      checked={false}
-      id="specialForces"
-      name="rank"
-      onChange={[Function]}
-      type="radio"
-      value="specialForces"
-    />
-    <img
-      className="specialforces-rank-img mx-1"
-    />
-  </label>
-  <label
-    className="btn btn-light rank-label"
-    title="Support"
-  >
-    <input
-      autoComplete="off"
-      checked={false}
-      id="support"
-      name="rank"
-      onChange={[Function]}
-      type="radio"
-      value="support"
-    />
-    <img
-      className="support-rank-img mx-1"
-    />
-  </label>
-  <label
-    className="btn btn-light rank-label"
-    title="Heavy"
-  >
-    <input
-      autoComplete="off"
-      checked={false}
-      id="heavy"
-      name="rank"
-      onChange={[Function]}
-      type="radio"
-      value="heavy"
-    />
-    <img
-      className="heavy-rank-img mx-1"
-    />
-  </label>
+    <label
+      class="btn btn-light rank-label active"
+      title="Commander"
+    >
+      <input
+        autocomplete="off"
+        checked=""
+        id="commander"
+        name="rank"
+        type="radio"
+        value="commander"
+      />
+      <img
+        class="commander-rank-img mx-1"
+      />
+    </label>
+    <label
+      class="btn btn-light rank-label"
+      title="Operative"
+    >
+      <input
+        autocomplete="off"
+        id="operative"
+        name="rank"
+        type="radio"
+        value="operative"
+      />
+      <img
+        class="operative-rank-img mx-1"
+      />
+    </label>
+    <label
+      class="btn btn-light rank-label"
+      title="Corps"
+    >
+      <input
+        autocomplete="off"
+        id="corps"
+        name="rank"
+        type="radio"
+        value="corps"
+      />
+      <img
+        class="corps-rank-img mx-1"
+      />
+    </label>
+    <label
+      class="btn btn-light rank-label"
+      title="Special Forces"
+    >
+      <input
+        autocomplete="off"
+        id="specialForces"
+        name="rank"
+        type="radio"
+        value="specialForces"
+      />
+      <img
+        class="specialforces-rank-img mx-1"
+      />
+    </label>
+    <label
+      class="btn btn-light rank-label"
+      title="Support"
+    >
+      <input
+        autocomplete="off"
+        id="support"
+        name="rank"
+        type="radio"
+        value="support"
+      />
+      <img
+        class="support-rank-img mx-1"
+      />
+    </label>
+    <label
+      class="btn btn-light rank-label"
+      title="Heavy"
+    >
+      <input
+        autocomplete="off"
+        id="heavy"
+        name="rank"
+        type="radio"
+        value="heavy"
+      />
+      <img
+        class="heavy-rank-img mx-1"
+      />
+    </label>
+  </div>
 </div>
 `;

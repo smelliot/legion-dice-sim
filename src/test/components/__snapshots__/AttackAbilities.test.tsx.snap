@@ -2,256 +2,790 @@
 
 exports[`AttackAbilities matches the snapshot 1`] = `
 <div>
-  <AbilityToggle
-    active={false}
-    id="blastToggle"
-    label="Blast"
-    onActiveChanged={[MockFunction]}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="criticalXToggle"
-    label="Critical"
-    maxValue={4}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityToggle
-    active={false}
-    id="duelistAttackToggle"
-    label="Duelist"
-    onActiveChanged={[MockFunction]}
-    visible={true}
-  />
-  <AbilityToggle
-    active={false}
-    id="highVelocityToggle"
-    label="High Velocity"
-    onActiveChanged={[MockFunction]}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="impactXToggle"
-    label="Impact"
-    maxValue={9}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="ionXToggle"
-    label="Ion"
-    maxValue={2}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityToggle
-    active={false}
-    id="jediHunterToggle"
-    label="Jedi Hunter"
-    onActiveChanged={[MockFunction]}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="lethalXToggle"
-    label="Lethal"
-    maxValue={2}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityToggle
-    active={false}
-    id="makashiMasteryToggle"
-    label="Makashi Mastery"
-    onActiveChanged={[MockFunction]}
-    visible={true}
-  />
-  <AbilityToggle
-    active={false}
-    alert="Marksman is not yet fully optimized for some edge cases, especially against Armor X."
-    id="marksmanXToggle"
-    label="Marksman"
-    onActiveChanged={[MockFunction]}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="pierceXToggle"
-    label="Pierce"
-    maxValue={3}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="preciseXToggle"
-    label="Precise"
-    maxValue={3}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="ramXToggle"
-    label="Ram"
-    maxValue={2}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="sharpshooterXToggle"
-    label="Sharpshooter"
-    maxValue={2}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
+  <div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="blastToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="blastToggle"
+      >
+        Blast
+      </label>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="criticalXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="criticalXToggle"
+      >
+        Critical
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+      </select>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="duelistAttackToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="duelistAttackToggle"
+      >
+        Duelist
+      </label>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="highVelocityToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="highVelocityToggle"
+      >
+        High Velocity
+      </label>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="impactXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="impactXToggle"
+      >
+        Impact
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+        <option
+          value="6"
+        >
+          6
+        </option>
+        <option
+          value="7"
+        >
+          7
+        </option>
+        <option
+          value="8"
+        >
+          8
+        </option>
+        <option
+          value="9"
+        >
+          9
+        </option>
+      </select>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="ionXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="ionXToggle"
+      >
+        Ion
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+      </select>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="jediHunterToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="jediHunterToggle"
+      >
+        Jedi Hunter
+      </label>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="lethalXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="lethalXToggle"
+      >
+        Lethal
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+      </select>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="makashiMasteryToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="makashiMasteryToggle"
+      >
+        Makashi Mastery
+      </label>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="marksmanXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="marksmanXToggle"
+      >
+        Marksman
+      </label>
+      <a
+        class="btn popover-button"
+        data-content="Marksman is not yet fully optimized for some edge cases, especially against Armor X."
+        data-placement="top"
+        data-toggle="popover"
+        data-trigger="focus"
+        id="marksmanXToggle-abilitytoggle-popover"
+        role="button"
+        tabindex="0"
+        title="Info"
+      />
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="pierceXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="pierceXToggle"
+      >
+        Pierce
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+      </select>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="preciseXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="preciseXToggle"
+      >
+        Precise
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+      </select>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="ramXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="ramXToggle"
+      >
+        Ram
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+      </select>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="sharpshooterXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="sharpshooterXToggle"
+      >
+        Sharpshooter
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+      </select>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`AttackAbilities matches the snapshot for simplified view 1`] = `
 <div>
-  <AbilityToggle
-    active={false}
-    id="blastToggle"
-    label="Blast"
-    onActiveChanged={[MockFunction]}
-    visible={false}
-  />
-  <AbilityXToggle
-    active={false}
-    id="criticalXToggle"
-    label="Critical"
-    maxValue={4}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityToggle
-    active={false}
-    id="duelistAttackToggle"
-    label="Duelist"
-    onActiveChanged={[MockFunction]}
-    visible={false}
-  />
-  <AbilityToggle
-    active={false}
-    id="highVelocityToggle"
-    label="High Velocity"
-    onActiveChanged={[MockFunction]}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="impactXToggle"
-    label="Impact"
-    maxValue={9}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="ionXToggle"
-    label="Ion"
-    maxValue={2}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={false}
-  />
-  <AbilityToggle
-    active={false}
-    id="jediHunterToggle"
-    label="Jedi Hunter"
-    onActiveChanged={[MockFunction]}
-    visible={false}
-  />
-  <AbilityXToggle
-    active={false}
-    id="lethalXToggle"
-    label="Lethal"
-    maxValue={2}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={false}
-  />
-  <AbilityToggle
-    active={false}
-    id="makashiMasteryToggle"
-    label="Makashi Mastery"
-    onActiveChanged={[MockFunction]}
-    visible={false}
-  />
-  <AbilityToggle
-    active={false}
-    alert="Marksman is not yet fully optimized for some edge cases, especially against Armor X."
-    id="marksmanXToggle"
-    label="Marksman"
-    onActiveChanged={[MockFunction]}
-    visible={false}
-  />
-  <AbilityXToggle
-    active={false}
-    id="pierceXToggle"
-    label="Pierce"
-    maxValue={3}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="preciseXToggle"
-    label="Precise"
-    maxValue={3}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityXToggle
-    active={false}
-    id="ramXToggle"
-    label="Ram"
-    maxValue={2}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={false}
-  />
-  <AbilityXToggle
-    active={false}
-    id="sharpshooterXToggle"
-    label="Sharpshooter"
-    maxValue={2}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
+  <div>
+    <div
+      class="collapse justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="blastToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="blastToggle"
+      >
+        Blast
+      </label>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="criticalXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="criticalXToggle"
+      >
+        Critical
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+      </select>
+    </div>
+    <div
+      class="collapse justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="duelistAttackToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="duelistAttackToggle"
+      >
+        Duelist
+      </label>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="highVelocityToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="highVelocityToggle"
+      >
+        High Velocity
+      </label>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="impactXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="impactXToggle"
+      >
+        Impact
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+        <option
+          value="6"
+        >
+          6
+        </option>
+        <option
+          value="7"
+        >
+          7
+        </option>
+        <option
+          value="8"
+        >
+          8
+        </option>
+        <option
+          value="9"
+        >
+          9
+        </option>
+      </select>
+    </div>
+    <div
+      class="collapse justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="ionXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="ionXToggle"
+      >
+        Ion
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+      </select>
+    </div>
+    <div
+      class="collapse justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="jediHunterToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="jediHunterToggle"
+      >
+        Jedi Hunter
+      </label>
+    </div>
+    <div
+      class="collapse justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="lethalXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="lethalXToggle"
+      >
+        Lethal
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+      </select>
+    </div>
+    <div
+      class="collapse justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="makashiMasteryToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="makashiMasteryToggle"
+      >
+        Makashi Mastery
+      </label>
+    </div>
+    <div
+      class="collapse justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="marksmanXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="marksmanXToggle"
+      >
+        Marksman
+      </label>
+      <a
+        class="btn popover-button"
+        data-content="Marksman is not yet fully optimized for some edge cases, especially against Armor X."
+        data-placement="top"
+        data-toggle="popover"
+        data-trigger="focus"
+        id="marksmanXToggle-abilitytoggle-popover"
+        role="button"
+        tabindex="0"
+        title="Info"
+      />
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="pierceXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="pierceXToggle"
+      >
+        Pierce
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+      </select>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="preciseXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="preciseXToggle"
+      >
+        Precise
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+      </select>
+    </div>
+    <div
+      class="collapse justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="ramXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="ramXToggle"
+      >
+        Ram
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+      </select>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="sharpshooterXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="sharpshooterXToggle"
+      >
+        Sharpshooter
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+      </select>
+    </div>
+  </div>
 </div>
 `;

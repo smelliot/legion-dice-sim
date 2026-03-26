@@ -2,338 +2,864 @@
 
 exports[`Defense matches the snapshot 1`] = `
 <div>
-  <h2
-    className="d-flex justify-content-center my-2"
-  >
-    Defense
-    <LoadProfileButton
-      dialogId="defenseProfileDialog"
-      tooltip="Load defense profile"
-    />
-  </h2>
-  <div
-    className="d-flex justify-content-center my-2"
-  >
-    <SurgeDieSelector
-      color="white"
-      onClick={[MockFunction]}
-      surge={true}
-    />
-  </div>
-  <DefenseTokens
-    eventHandlers={
-      Object {
-        "changeDie": [MockFunction],
-        "handleArmorChange": [MockFunction],
-        "handleArmorXChange": [MockFunction],
-        "handleArmorXValueChange": [MockFunction],
-        "handleBlockChange": [MockFunction],
-        "handleCoverChange": [MockFunction],
-        "handleDangerSenseXChange": [MockFunction],
-        "handleDangerSenseXValueChange": [MockFunction],
-        "handleDeflectChange": [MockFunction],
-        "handleDjemSoMasteryChange": [MockFunction],
-        "handleDuelistChange": [MockFunction],
-        "handleHasForceUpgradesChange": [MockFunction],
-        "handleImmuneBlastChange": [MockFunction],
-        "handleImmuneMeleePierceChange": [MockFunction],
-        "handleImmunePierceChange": [MockFunction],
-        "handleImperviousChange": [MockFunction],
-        "handleLowProfileChange": [MockFunction],
-        "handleOutmaneuverChange": [MockFunction],
-        "handleSoresuMasteryChange": [MockFunction],
-        "handleUncannyLuckXChange": [MockFunction],
-        "handleUncannyLuckXValueChange": [MockFunction],
-        "incrementDodgeTokenCount": [MockFunction],
-        "incrementObservationTokenCount": [MockFunction],
-        "incrementShieldTokenCount": [MockFunction],
-        "incrementSuppressionTokenCount": [MockFunction],
-        "incrementSurgeTokenCount": [MockFunction],
-        "resetTokenCount": [MockFunction],
-      }
-    }
-    showSimplifiedView={false}
-    tokens={
-      Object {
-        "dodge": 0,
-        "observation": 0,
-        "shield": 0,
-        "suppression": 0,
-        "surge": 0,
-      }
-    }
-  />
-  <div
-    className="d-flex justify-content-center my-2"
-  >
-    <span
-      className="mx-2 my-auto drop-down-label"
+  <div>
+    <h2
+      class="d-flex justify-content-center my-2"
     >
-      Cover:
-    </span>
-    <select
-      className="rounded-lg mr-4 px-2"
-      onChange={[Function]}
-      value="none"
+      Defense
+      <button
+        class="btn btn-light border rounded-lg load-profile-button mx-2 my-auto"
+        data-target="#defenseProfileDialog"
+        data-toggle="modal"
+        title="Load defense profile"
+      />
+    </h2>
+    <div
+      class="d-flex justify-content-center my-2"
     >
-      <option
-        value="none"
+      <button
+        class="btn border btn-light border-secondary rounded-lg selection-die mx-1 surge-die-normal"
+      />
+    </div>
+    <div>
+      <div
+        class="d-flex justify-content-center my-2"
       >
-        None
-      </option>
-      <option
-        value="light"
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-dodge"
+            title="Dodge"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-surge"
+            title="Surge"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-shield"
+            title="Shield"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-observation"
+            title="Observation"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-suppression"
+            title="Suppression"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <button
+          class="btn btn-secondary border rounded-lg clear-button mx-2 my-auto"
+          title="Clear defense tokens"
+        />
+      </div>
+    </div>
+    <div
+      class="d-flex justify-content-center my-2"
+    >
+      <span
+        class="mx-2 my-auto drop-down-label"
       >
-        Light
-      </option>
-      <option
-        value="heavy"
+        Cover:
+      </span>
+      <select
+        class="rounded-lg mr-4 px-2"
       >
-        Heavy
-      </option>
-    </select>
+        <option
+          value="none"
+        >
+          None
+        </option>
+        <option
+          value="light"
+        >
+          Light
+        </option>
+        <option
+          value="heavy"
+        >
+          Heavy
+        </option>
+      </select>
+    </div>
+    <div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="armorToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="armorToggle"
+        >
+          Armor
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="armorXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="armorXToggle"
+        >
+          Armor
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="blockToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="blockToggle"
+        >
+          Block
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="dangerSenseXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="dangerSenseXToggle"
+        >
+          Danger Sense
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="deflectToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="deflectToggle"
+        >
+          Deflect
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="djemSoMasteryToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="djemSoMasteryToggle"
+        >
+          Djem So Mastery
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="duelistDefenseToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="duelistDefenseToggle"
+        >
+          Duelist
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="hasForceUpgrades"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="hasForceUpgrades"
+        >
+          Force Upgrade(s)
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="imperviousToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="imperviousToggle"
+        >
+          Impervious
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="immuneBlastToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="immuneBlastToggle"
+        >
+          Immune: Blast
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="immuneMeleePierceToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="immuneMeleePierceToggle"
+        >
+          Immune: Melee Pierce
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="immunePierceToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="immunePierceToggle"
+        >
+          Immune: Pierce
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="lowProfileToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="lowProfileToggle"
+        >
+          Low Profile
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="outmaneuverToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="outmaneuverToggle"
+        >
+          Outmaneuver
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="soresuMasteryToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="soresuMasteryToggle"
+        >
+          Soresu Mastery
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="uncannyLuckToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="uncannyLuckToggle"
+        >
+          Uncanny Luck
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
+    </div>
   </div>
-  <DefenseAbilities
-    eventHandlers={
-      Object {
-        "changeDie": [MockFunction],
-        "handleArmorChange": [MockFunction],
-        "handleArmorXChange": [MockFunction],
-        "handleArmorXValueChange": [MockFunction],
-        "handleBlockChange": [MockFunction],
-        "handleCoverChange": [MockFunction],
-        "handleDangerSenseXChange": [MockFunction],
-        "handleDangerSenseXValueChange": [MockFunction],
-        "handleDeflectChange": [MockFunction],
-        "handleDjemSoMasteryChange": [MockFunction],
-        "handleDuelistChange": [MockFunction],
-        "handleHasForceUpgradesChange": [MockFunction],
-        "handleImmuneBlastChange": [MockFunction],
-        "handleImmuneMeleePierceChange": [MockFunction],
-        "handleImmunePierceChange": [MockFunction],
-        "handleImperviousChange": [MockFunction],
-        "handleLowProfileChange": [MockFunction],
-        "handleOutmaneuverChange": [MockFunction],
-        "handleSoresuMasteryChange": [MockFunction],
-        "handleUncannyLuckXChange": [MockFunction],
-        "handleUncannyLuckXValueChange": [MockFunction],
-        "incrementDodgeTokenCount": [MockFunction],
-        "incrementObservationTokenCount": [MockFunction],
-        "incrementShieldTokenCount": [MockFunction],
-        "incrementSuppressionTokenCount": [MockFunction],
-        "incrementSurgeTokenCount": [MockFunction],
-        "resetTokenCount": [MockFunction],
-      }
-    }
-    inputs={
-      Object {
-        "armor": false,
-        "armorX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "block": false,
-        "cover": "none",
-        "dangerSenseX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "deflect": false,
-        "dieColor": "white",
-        "djemSoMastery": false,
-        "duelist": false,
-        "hasForceUpgrades": false,
-        "immuneBlast": false,
-        "immuneMeleePierce": false,
-        "immunePierce": false,
-        "impervious": false,
-        "lowProfile": false,
-        "outmaneuver": false,
-        "soresuMastery": false,
-        "surge": true,
-        "tokens": Object {
-          "dodge": 0,
-          "observation": 0,
-          "shield": 0,
-          "suppression": 0,
-          "surge": 0,
-        },
-        "uncannyLuckX": Object {
-          "active": false,
-          "value": 1,
-        },
-      }
-    }
-    showSimpleView={false}
-  />
 </div>
 `;
 
 exports[`Defense matches the snapshot for simplified view 1`] = `
 <div>
-  <h2
-    className="d-flex justify-content-center my-2"
-  >
-    Defense
-    <LoadProfileButton
-      dialogId="defenseProfileDialog"
-      tooltip="Load defense profile"
-    />
-  </h2>
-  <div
-    className="d-flex justify-content-center my-2"
-  >
-    <SurgeDieSelector
-      color="white"
-      onClick={[MockFunction]}
-      surge={true}
-    />
-  </div>
-  <DefenseTokens
-    eventHandlers={
-      Object {
-        "changeDie": [MockFunction],
-        "handleArmorChange": [MockFunction],
-        "handleArmorXChange": [MockFunction],
-        "handleArmorXValueChange": [MockFunction],
-        "handleBlockChange": [MockFunction],
-        "handleCoverChange": [MockFunction],
-        "handleDangerSenseXChange": [MockFunction],
-        "handleDangerSenseXValueChange": [MockFunction],
-        "handleDeflectChange": [MockFunction],
-        "handleDjemSoMasteryChange": [MockFunction],
-        "handleDuelistChange": [MockFunction],
-        "handleHasForceUpgradesChange": [MockFunction],
-        "handleImmuneBlastChange": [MockFunction],
-        "handleImmuneMeleePierceChange": [MockFunction],
-        "handleImmunePierceChange": [MockFunction],
-        "handleImperviousChange": [MockFunction],
-        "handleLowProfileChange": [MockFunction],
-        "handleOutmaneuverChange": [MockFunction],
-        "handleSoresuMasteryChange": [MockFunction],
-        "handleUncannyLuckXChange": [MockFunction],
-        "handleUncannyLuckXValueChange": [MockFunction],
-        "incrementDodgeTokenCount": [MockFunction],
-        "incrementObservationTokenCount": [MockFunction],
-        "incrementShieldTokenCount": [MockFunction],
-        "incrementSuppressionTokenCount": [MockFunction],
-        "incrementSurgeTokenCount": [MockFunction],
-        "resetTokenCount": [MockFunction],
-      }
-    }
-    showSimplifiedView={true}
-    tokens={
-      Object {
-        "dodge": 0,
-        "observation": 0,
-        "shield": 0,
-        "suppression": 0,
-        "surge": 0,
-      }
-    }
-  />
-  <div
-    className="d-flex justify-content-center my-2"
-  >
-    <span
-      className="mx-2 my-auto drop-down-label"
+  <div>
+    <h2
+      class="d-flex justify-content-center my-2"
     >
-      Cover:
-    </span>
-    <select
-      className="rounded-lg mr-4 px-2"
-      onChange={[Function]}
-      value="none"
+      Defense
+      <button
+        class="btn btn-light border rounded-lg load-profile-button mx-2 my-auto"
+        data-target="#defenseProfileDialog"
+        data-toggle="modal"
+        title="Load defense profile"
+      />
+    </h2>
+    <div
+      class="d-flex justify-content-center my-2"
     >
-      <option
-        value="none"
+      <button
+        class="btn border btn-light border-secondary rounded-lg selection-die mx-1 surge-die-normal"
+      />
+    </div>
+    <div>
+      <div
+        class="d-flex justify-content-center my-2"
       >
-        None
-      </option>
-      <option
-        value="light"
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-dodge"
+            title="Dodge"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-surge"
+            title="Surge"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <div
+          class="collapse token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-shield"
+            title="Shield"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <div
+          class="collapse token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-observation"
+            title="Observation"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-suppression"
+            title="Suppression"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <button
+          class="btn btn-secondary border rounded-lg clear-button mx-2 my-auto"
+          title="Clear defense tokens"
+        />
+      </div>
+    </div>
+    <div
+      class="d-flex justify-content-center my-2"
+    >
+      <span
+        class="mx-2 my-auto drop-down-label"
       >
-        Light
-      </option>
-      <option
-        value="heavy"
+        Cover:
+      </span>
+      <select
+        class="rounded-lg mr-4 px-2"
       >
-        Heavy
-      </option>
-    </select>
+        <option
+          value="none"
+        >
+          None
+        </option>
+        <option
+          value="light"
+        >
+          Light
+        </option>
+        <option
+          value="heavy"
+        >
+          Heavy
+        </option>
+      </select>
+    </div>
+    <div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="armorToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="armorToggle"
+        >
+          Armor
+        </label>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="armorXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="armorXToggle"
+        >
+          Armor
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="blockToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="blockToggle"
+        >
+          Block
+        </label>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="dangerSenseXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="dangerSenseXToggle"
+        >
+          Danger Sense
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="deflectToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="deflectToggle"
+        >
+          Deflect
+        </label>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="djemSoMasteryToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="djemSoMasteryToggle"
+        >
+          Djem So Mastery
+        </label>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="duelistDefenseToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="duelistDefenseToggle"
+        >
+          Duelist
+        </label>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="hasForceUpgrades"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="hasForceUpgrades"
+        >
+          Force Upgrade(s)
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="imperviousToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="imperviousToggle"
+        >
+          Impervious
+        </label>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="immuneBlastToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="immuneBlastToggle"
+        >
+          Immune: Blast
+        </label>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="immuneMeleePierceToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="immuneMeleePierceToggle"
+        >
+          Immune: Melee Pierce
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="immunePierceToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="immunePierceToggle"
+        >
+          Immune: Pierce
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="lowProfileToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="lowProfileToggle"
+        >
+          Low Profile
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="outmaneuverToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="outmaneuverToggle"
+        >
+          Outmaneuver
+        </label>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="soresuMasteryToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="soresuMasteryToggle"
+        >
+          Soresu Mastery
+        </label>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="uncannyLuckToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="uncannyLuckToggle"
+        >
+          Uncanny Luck
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
+    </div>
   </div>
-  <DefenseAbilities
-    eventHandlers={
-      Object {
-        "changeDie": [MockFunction],
-        "handleArmorChange": [MockFunction],
-        "handleArmorXChange": [MockFunction],
-        "handleArmorXValueChange": [MockFunction],
-        "handleBlockChange": [MockFunction],
-        "handleCoverChange": [MockFunction],
-        "handleDangerSenseXChange": [MockFunction],
-        "handleDangerSenseXValueChange": [MockFunction],
-        "handleDeflectChange": [MockFunction],
-        "handleDjemSoMasteryChange": [MockFunction],
-        "handleDuelistChange": [MockFunction],
-        "handleHasForceUpgradesChange": [MockFunction],
-        "handleImmuneBlastChange": [MockFunction],
-        "handleImmuneMeleePierceChange": [MockFunction],
-        "handleImmunePierceChange": [MockFunction],
-        "handleImperviousChange": [MockFunction],
-        "handleLowProfileChange": [MockFunction],
-        "handleOutmaneuverChange": [MockFunction],
-        "handleSoresuMasteryChange": [MockFunction],
-        "handleUncannyLuckXChange": [MockFunction],
-        "handleUncannyLuckXValueChange": [MockFunction],
-        "incrementDodgeTokenCount": [MockFunction],
-        "incrementObservationTokenCount": [MockFunction],
-        "incrementShieldTokenCount": [MockFunction],
-        "incrementSuppressionTokenCount": [MockFunction],
-        "incrementSurgeTokenCount": [MockFunction],
-        "resetTokenCount": [MockFunction],
-      }
-    }
-    inputs={
-      Object {
-        "armor": false,
-        "armorX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "block": false,
-        "cover": "none",
-        "dangerSenseX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "deflect": false,
-        "dieColor": "white",
-        "djemSoMastery": false,
-        "duelist": false,
-        "hasForceUpgrades": false,
-        "immuneBlast": false,
-        "immuneMeleePierce": false,
-        "immunePierce": false,
-        "impervious": false,
-        "lowProfile": false,
-        "outmaneuver": false,
-        "soresuMastery": false,
-        "surge": true,
-        "tokens": Object {
-          "dodge": 0,
-          "observation": 0,
-          "shield": 0,
-          "suppression": 0,
-          "surge": 0,
-        },
-        "uncannyLuckX": Object {
-          "active": false,
-          "value": 1,
-        },
-      }
-    }
-    showSimpleView={true}
-  />
 </div>
 `;

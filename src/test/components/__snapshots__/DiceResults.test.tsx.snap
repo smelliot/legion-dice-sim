@@ -2,149 +2,153 @@
 
 exports[`DiceResults matches the snapshot when not visible 1`] = `
 <div>
-  <div
-    className="single-result justify-content-center my-3 collapse"
-  >
-    <img
-      className="crit-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-    <img
-      className="hit-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-    <img
-      className="attack-surge-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-  </div>
-  <div
-    className="single-result justify-content-center my-3 collapse"
-  >
-    <img
-      className="block-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-    <img
-      className="defense-surge-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-  </div>
-  <div
-    className="single-result justify-content-center my-3 collapse"
-  >
-    <span
-      className="die-result"
-    >
-      Wounds: 
-      0
-    </span>
-  </div>
-  <div
-    className="my-3 mx-auto collapse"
-    id="chartContainer"
-  >
-    <Highchart />
-  </div>
-  <div
-    className="row collapse"
-  >
+  <div>
     <div
-      className="col-md-3 offset-md-3 my-3"
+      class="single-result justify-content-center my-3 collapse"
     >
-      <h3
-        className="stats-header"
+      <img
+        class="crit-result-img mx-1"
+      />
+      <span
+        class="die-result"
       >
-        Wounds
-      </h3>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Median: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Mean: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Standard Deviation: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
+        0
+      </span>
+      <img
+        class="hit-result-img mx-1"
+      />
+      <span
+        class="die-result"
+      >
+        0
+      </span>
+      <img
+        class="attack-surge-result-img mx-1"
+      />
+      <span
+        class="die-result"
+      >
+        0
+      </span>
     </div>
     <div
-      className="col-md-3 my-3"
+      class="single-result justify-content-center my-3 collapse"
     >
-      <h3
-        className="stats-header"
+      <img
+        class="block-result-img mx-1"
+      />
+      <span
+        class="die-result"
       >
-        Required Saves
-      </h3>
-      <div>
-        <span
-          className="stats-label"
+        0
+      </span>
+      <img
+        class="defense-surge-result-img mx-1"
+      />
+      <span
+        class="die-result"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="single-result justify-content-center my-3 collapse"
+    >
+      <span
+        class="die-result"
+      >
+        Wounds: 
+        0
+      </span>
+    </div>
+    <div
+      class="my-3 mx-auto collapse"
+      id="chartContainer"
+    >
+      <div
+        data-testid="highcharts-mock"
+      />
+    </div>
+    <div
+      class="row collapse"
+    >
+      <div
+        class="col-md-3 offset-md-3 my-3"
+      >
+        <h3
+          class="stats-header"
         >
-          Median: 
-        </span>
-        <span>
-          0
-        </span>
+          Wounds
+        </h3>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Median: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Mean: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Standard Deviation: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
       </div>
-      <div>
-        <span
-          className="stats-label"
+      <div
+        class="col-md-3 my-3"
+      >
+        <h3
+          class="stats-header"
         >
-          Mean: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Standard Deviation: 
-        </span>
-        <span>
-          0
-        </span>
+          Required Saves
+        </h3>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Median: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Mean: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Standard Deviation: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -153,149 +157,153 @@ exports[`DiceResults matches the snapshot when not visible 1`] = `
 
 exports[`DiceResults matches the snapshot when showing graph result 1`] = `
 <div>
-  <div
-    className="single-result justify-content-center my-3 collapse"
-  >
-    <img
-      className="crit-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-    <img
-      className="hit-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-    <img
-      className="attack-surge-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-  </div>
-  <div
-    className="single-result justify-content-center my-3 collapse"
-  >
-    <img
-      className="block-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-    <img
-      className="defense-surge-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-  </div>
-  <div
-    className="single-result justify-content-center my-3 collapse"
-  >
-    <span
-      className="die-result"
-    >
-      Wounds: 
-      0
-    </span>
-  </div>
-  <div
-    className="my-3 mx-auto collapse.show"
-    id="chartContainer"
-  >
-    <Highchart />
-  </div>
-  <div
-    className="row collapse.show"
-  >
+  <div>
     <div
-      className="col-md-3 offset-md-3 my-3"
+      class="single-result justify-content-center my-3 collapse"
     >
-      <h3
-        className="stats-header"
+      <img
+        class="crit-result-img mx-1"
+      />
+      <span
+        class="die-result"
       >
-        Wounds
-      </h3>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Median: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Mean: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Standard Deviation: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
+        0
+      </span>
+      <img
+        class="hit-result-img mx-1"
+      />
+      <span
+        class="die-result"
+      >
+        0
+      </span>
+      <img
+        class="attack-surge-result-img mx-1"
+      />
+      <span
+        class="die-result"
+      >
+        0
+      </span>
     </div>
     <div
-      className="col-md-3 my-3"
+      class="single-result justify-content-center my-3 collapse"
     >
-      <h3
-        className="stats-header"
+      <img
+        class="block-result-img mx-1"
+      />
+      <span
+        class="die-result"
       >
-        Required Saves
-      </h3>
-      <div>
-        <span
-          className="stats-label"
+        0
+      </span>
+      <img
+        class="defense-surge-result-img mx-1"
+      />
+      <span
+        class="die-result"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="single-result justify-content-center my-3 collapse"
+    >
+      <span
+        class="die-result"
+      >
+        Wounds: 
+        0
+      </span>
+    </div>
+    <div
+      class="my-3 mx-auto collapse.show"
+      id="chartContainer"
+    >
+      <div
+        data-testid="highcharts-mock"
+      />
+    </div>
+    <div
+      class="row collapse.show"
+    >
+      <div
+        class="col-md-3 offset-md-3 my-3"
+      >
+        <h3
+          class="stats-header"
         >
-          Median: 
-        </span>
-        <span>
-          0
-        </span>
+          Wounds
+        </h3>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Median: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Mean: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Standard Deviation: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
       </div>
-      <div>
-        <span
-          className="stats-label"
+      <div
+        class="col-md-3 my-3"
+      >
+        <h3
+          class="stats-header"
         >
-          Mean: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Standard Deviation: 
-        </span>
-        <span>
-          0
-        </span>
+          Required Saves
+        </h3>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Median: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Mean: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Standard Deviation: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -304,149 +312,153 @@ exports[`DiceResults matches the snapshot when showing graph result 1`] = `
 
 exports[`DiceResults matches the snapshot when showing single result 1`] = `
 <div>
-  <div
-    className="single-result justify-content-center my-3 collapse.show"
-  >
-    <img
-      className="crit-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-    <img
-      className="hit-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-    <img
-      className="attack-surge-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-  </div>
-  <div
-    className="single-result justify-content-center my-3 collapse.show"
-  >
-    <img
-      className="block-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-    <img
-      className="defense-surge-result-img mx-1"
-    />
-    <span
-      className="die-result"
-    >
-      0
-    </span>
-  </div>
-  <div
-    className="single-result justify-content-center my-3 collapse.show"
-  >
-    <span
-      className="die-result"
-    >
-      Wounds: 
-      0
-    </span>
-  </div>
-  <div
-    className="my-3 mx-auto collapse"
-    id="chartContainer"
-  >
-    <Highchart />
-  </div>
-  <div
-    className="row collapse"
-  >
+  <div>
     <div
-      className="col-md-3 offset-md-3 my-3"
+      class="single-result justify-content-center my-3 collapse.show"
     >
-      <h3
-        className="stats-header"
+      <img
+        class="crit-result-img mx-1"
+      />
+      <span
+        class="die-result"
       >
-        Wounds
-      </h3>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Median: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Mean: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Standard Deviation: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
+        0
+      </span>
+      <img
+        class="hit-result-img mx-1"
+      />
+      <span
+        class="die-result"
+      >
+        0
+      </span>
+      <img
+        class="attack-surge-result-img mx-1"
+      />
+      <span
+        class="die-result"
+      >
+        0
+      </span>
     </div>
     <div
-      className="col-md-3 my-3"
+      class="single-result justify-content-center my-3 collapse.show"
     >
-      <h3
-        className="stats-header"
+      <img
+        class="block-result-img mx-1"
+      />
+      <span
+        class="die-result"
       >
-        Required Saves
-      </h3>
-      <div>
-        <span
-          className="stats-label"
+        0
+      </span>
+      <img
+        class="defense-surge-result-img mx-1"
+      />
+      <span
+        class="die-result"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="single-result justify-content-center my-3 collapse.show"
+    >
+      <span
+        class="die-result"
+      >
+        Wounds: 
+        0
+      </span>
+    </div>
+    <div
+      class="my-3 mx-auto collapse"
+      id="chartContainer"
+    >
+      <div
+        data-testid="highcharts-mock"
+      />
+    </div>
+    <div
+      class="row collapse"
+    >
+      <div
+        class="col-md-3 offset-md-3 my-3"
+      >
+        <h3
+          class="stats-header"
         >
-          Median: 
-        </span>
-        <span>
-          0
-        </span>
+          Wounds
+        </h3>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Median: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Mean: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Standard Deviation: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
       </div>
-      <div>
-        <span
-          className="stats-label"
+      <div
+        class="col-md-3 my-3"
+      >
+        <h3
+          class="stats-header"
         >
-          Mean: 
-        </span>
-        <span>
-          0
-        </span>
-      </div>
-      <div>
-        <span
-          className="stats-label"
-        >
-          Standard Deviation: 
-        </span>
-        <span>
-          0
-        </span>
+          Required Saves
+        </h3>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Median: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Mean: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Standard Deviation: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
       </div>
     </div>
   </div>

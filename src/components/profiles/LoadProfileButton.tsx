@@ -1,21 +1,21 @@
-import '../../css/LoadProfileButton.css';
+import "../../css/LoadProfileButton.css";
 
-import React from 'react';
+import React from "react";
 
 type LoadProfileButtonProps = {
-    dialogId: string,
-    tooltip: string,
+  dialogId: string;
+  tooltip: string;
 };
 
-function LoadProfileButton(props : LoadProfileButtonProps) : JSX.Element {
-    return (
-        <button
-            className="btn btn-light border rounded-lg load-profile-button mx-2 my-auto"
-            title={props.tooltip}
-            data-toggle="modal"
-            data-target={"#" + props.dialogId}>
-        </button>
-    );
+function LoadProfileButton(props: LoadProfileButtonProps): React.JSX.Element {
+  return (
+    <button
+      className="btn btn-light border rounded-lg load-profile-button mx-2 my-auto"
+      title={props.tooltip}
+      data-toggle="modal"
+      data-target={"#" + props.dialogId}
+    ></button>
+  );
 }
 
 export default LoadProfileButton;

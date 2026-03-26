@@ -1,57 +1,61 @@
-import React from 'react';
+import React from "react";
 
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render, fireEvent } from "@testing-library/react";
 
-import * as T from '../../code/Types';
-import Defense from '../../components/Defense';
+import * as T from "../../code/Types";
+import Defense from "../../components/Defense";
 
-import * as EventMocks from '../mocks/EventHandlerMocks';
+import * as EventMocks from "../mocks/EventHandlerMocks";
 
-describe('Defense', () => {
-    it('matches the snapshot', () => {
-        const input = T.createDefaultAttackInput();
-        const events = EventMocks.createMockAppStateDefenseEventHandlers();
+describe("Defense", () => {
+  it("matches the snapshot", () => {
+    const input = T.createDefaultAttackInput();
+    const events = EventMocks.createMockAppStateDefenseEventHandlers();
 
-        const defense = shallow(<Defense
-            profileDialogId="defenseProfileDialog"
-            showSimpleView={false}
-            input={input.defense}
-            eventHandlers={events}
-            ></Defense>);
+    const { container } = render(
+      <Defense
+        profileDialogId="defenseProfileDialog"
+        showSimpleView={false}
+        input={input.defense}
+        eventHandlers={events}
+      ></Defense>
+    );
 
-        const snapshot = shallowToJson(defense);
-        expect(snapshot).toMatchSnapshot();
-    });
+    expect(container).toMatchSnapshot();
+  });
 
-    it('matches the snapshot for simplified view', () => {
-        const input = T.createDefaultAttackInput();
-        const events = EventMocks.createMockAppStateDefenseEventHandlers();
+  it("matches the snapshot for simplified view", () => {
+    const input = T.createDefaultAttackInput();
+    const events = EventMocks.createMockAppStateDefenseEventHandlers();
 
-        const defense = shallow(<Defense
-            profileDialogId="defenseProfileDialog"
-            showSimpleView={true}
-            input={input.defense}
-            eventHandlers={events}
-            ></Defense>);
+    const { container } = render(
+      <Defense
+        profileDialogId="defenseProfileDialog"
+        showSimpleView={true}
+        input={input.defense}
+        eventHandlers={events}
+      ></Defense>
+    );
 
-        const snapshot = shallowToJson(defense);
-        expect(snapshot).toMatchSnapshot();
-    });
+    expect(container).toMatchSnapshot();
+  });
 
-    it('handles surge conversion changing', () => {
-        const input = T.createDefaultAttackInput();
-        const events = EventMocks.createMockAppStateDefenseEventHandlers();
+  it("handles surge conversion changing", () => {
+    const input = T.createDefaultAttackInput();
+    const events = EventMocks.createMockAppStateDefenseEventHandlers();
 
-        const wrapper = shallow(<Defense
-            profileDialogId="defenseProfileDialog"
-            showSimpleView={false}
-            input={input.defense}
-            eventHandlers={events}
-            ></Defense>);
-        wrapper.find('select').simulate('change', { target: { value: 3 } });
+    const { container } = render(
+      <Defense
+        profileDialogId="defenseProfileDialog"
+        showSimpleView={false}
+        input={input.defense}
+        eventHandlers={events}
+      ></Defense>
+    );
+    const select = container.querySelector("select") as HTMLSelectElement;
+    fireEvent.change(select, { target: { value: "heavy" } });
 
-        expect(events.handleCoverChange).toHaveBeenCalledTimes(1);
-        expect(events.handleCoverChange).toHaveBeenCalledWith(3);
-    })
+    expect(events.handleCoverChange).toHaveBeenCalledTimes(1);
+    expect(events.handleCoverChange).toHaveBeenCalledWith("heavy");
+  });
 });

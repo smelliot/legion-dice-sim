@@ -1,22 +1,35 @@
-import React from 'react';
+import React from "react";
 
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+jest.mock("highcharts", () => ({
+  chart: jest.fn(),
+  setOptions: jest.fn(),
+}));
+jest.mock("highcharts-react-official", () => {
+  return {
+    __esModule: true,
+    default: () => <div data-testid="highcharts-mock" />,
+  };
+});
+jest.mock("highcharts/modules/exporting", () => jest.fn());
+jest.mock("highcharts/modules/offline-exporting", () => jest.fn());
 
-import App from 'components/App';
+import { render, screen, fireEvent } from "@testing-library/react";
 
-describe('App', () => {
-    it('matches the snapshot', () => {
-        const app = shallow(<App/>);
-        const snapshot = shallowToJson(app);
-        expect(snapshot).toMatchSnapshot();
-    });
+import App from "components/App";
 
-    it('handles simple view', () => {
-        const app = shallow(<App/>);
-        app.find('#showSimplifiedViewToggle').simulate('change', { target: { checked: true } });
+describe("App", () => {
+  it("matches the snapshot", () => {
+    const { container } = render(<App />);
+    expect(container).toMatchSnapshot();
+  });
 
-        const snapshot = shallowToJson(app);
-        expect(snapshot).toMatchSnapshot();
-    });
+  it("handles simple view", () => {
+    const { container } = render(<App />);
+    const toggle = container.querySelector(
+      "#showSimplifiedViewToggle"
+    ) as HTMLInputElement;
+    fireEvent.change(toggle, { target: { checked: true } });
+
+    expect(container).toMatchSnapshot();
+  });
 });

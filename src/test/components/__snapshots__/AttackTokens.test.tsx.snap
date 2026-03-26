@@ -2,27 +2,41 @@
 
 exports[`AttackTokens matches the snapshot 1`] = `
 <div>
-  <div
-    className="single-result justify-content-center my-2"
-  >
-    <Token
-      onClick={[MockFunction]}
-      tokenCssClass="token-counter-aim"
-      tooltip="Aim"
-      value={0}
-      visible={true}
-    />
-    <Token
-      onClick={[MockFunction]}
-      tokenCssClass="token-counter-surge"
-      tooltip="Surge"
-      value={0}
-      visible={true}
-    />
-    <ClearButton
-      onClick={[MockFunction]}
-      tooltip="Clear attack tokens"
-    />
+  <div>
+    <div
+      class="single-result justify-content-center my-2"
+    >
+      <div
+        class="collapse.show token-parent"
+      >
+        <button
+          class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-aim"
+          title="Aim"
+        />
+        <span
+          class="token-count"
+        >
+          0
+        </span>
+      </div>
+      <div
+        class="collapse.show token-parent"
+      >
+        <button
+          class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-surge"
+          title="Surge"
+        />
+        <span
+          class="token-count"
+        >
+          0
+        </span>
+      </div>
+      <button
+        class="btn btn-secondary border rounded-lg clear-button mx-2 my-auto"
+        title="Clear attack tokens"
+      />
+    </div>
   </div>
 </div>
 `;

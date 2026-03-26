@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import { create } from 'react-test-renderer';
+import { render } from "@testing-library/react";
 
-import Notification from '../../components/Notification';
+import Notification from "../../components/Notification";
 
-describe('Notification', () => {
-    it('matches the snapshot', () => {
-        const snapshot = create(<Notification message='This is a test.'></Notification>)
-        expect(snapshot.toJSON()).toMatchSnapshot();
-    });
+describe("Notification", () => {
+  it("matches the snapshot", () => {
+    const { container } = render(
+      <Notification message="This is a test."></Notification>
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

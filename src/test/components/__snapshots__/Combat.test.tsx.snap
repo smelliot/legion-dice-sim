@@ -2,27 +2,106 @@
 
 exports[`Combat matches the snapshot 1`] = `
 <div>
-  <h2
-    className="d-flex justify-content-center my-2"
-  >
-    Combat
-  </h2>
-  <AbilityXToggle
-    active={false}
-    id="guardianXToggle"
-    label="Guardian"
-    maxValue={12}
-    onActiveChanged={[MockFunction]}
-    onValueChanged={[MockFunction]}
-    value={1}
-    visible={true}
-  />
-  <AbilityToggle
-    active={false}
-    id="meleeAttackToggle"
-    label="Melee Attack"
-    onActiveChanged={[MockFunction]}
-    visible={true}
-  />
+  <div>
+    <h2
+      class="d-flex justify-content-center my-2"
+    >
+      Combat
+    </h2>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="guardianXToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="guardianXToggle"
+      >
+        Guardian
+      </label>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+        <option
+          value="6"
+        >
+          6
+        </option>
+        <option
+          value="7"
+        >
+          7
+        </option>
+        <option
+          value="8"
+        >
+          8
+        </option>
+        <option
+          value="9"
+        >
+          9
+        </option>
+        <option
+          value="10"
+        >
+          10
+        </option>
+        <option
+          value="11"
+        >
+          11
+        </option>
+        <option
+          value="12"
+        >
+          12
+        </option>
+      </select>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
+        id="meleeAttackToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="meleeAttackToggle"
+      >
+        Melee Attack
+      </label>
+    </div>
+  </div>
 </div>
 `;
