@@ -7,17 +7,7 @@ function Header(): React.JSX.Element {
     <nav className="navbar navbar-dark bg-dark justify-content-center">
       <a
         className="navbar-brand"
-        href="https://www.facebook.com/legionFNF"
-        title="Friday Night Fights"
-      >
-        <img
-          className="fnf-logo d-inline-block my-auto mx-2"
-          alt="Friday Night Fights"
-        ></img>
-      </a>
-      <a
-        className="navbar-brand"
-        href="https://github.com/Michael-S-Hammond/legion-dice-sim"
+        href="https://github.com/smelliot/legion-dice-sim"
         title="GitHub code and bugs"
       >
         <svg
