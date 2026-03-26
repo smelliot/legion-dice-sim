@@ -2,390 +2,990 @@
 
 exports[`Attack matches the snapshot 1`] = `
 <div>
-  <h2
-    className="d-flex justify-content-center my-2"
-  >
-    Attack
-    <LoadProfileButton
-      tooltip="Load attack profile"
-    />
-  </h2>
-  <div
-    className="d-flex justify-content-center my-2"
-  >
-    <DieCounter
-      count={0}
-      onClick={[MockFunction]}
-      styleName="btn-danger"
-    />
-    <DieCounter
-      count={0}
-      onClick={[MockFunction]}
-      styleName="btn-dark"
-    />
-    <DieCounter
-      count={0}
-      onClick={[MockFunction]}
-      styleName="btn-light"
-    />
-    <ClearButton
-      onClick={[MockFunction]}
-      tooltip="Clear attack dice"
-    />
-  </div>
-  <AttackTokens
-    eventHandlers={
-      Object {
-        "handleBlastChange": [MockFunction],
-        "handleCriticalXChange": [MockFunction],
-        "handleCriticalXValueChange": [MockFunction],
-        "handleDuelistChange": [MockFunction],
-        "handleHighVelocityChange": [MockFunction],
-        "handleImpactXChange": [MockFunction],
-        "handleImpactXValueChange": [MockFunction],
-        "handleIonXChange": [MockFunction],
-        "handleIonXValueChange": [MockFunction],
-        "handleJediHunterChange": [MockFunction],
-        "handleLethalXChange": [MockFunction],
-        "handleLethalXValueChange": [MockFunction],
-        "handleMakashiMasteryChange": [MockFunction],
-        "handleMarksmanChange": [MockFunction],
-        "handlePierceXChange": [MockFunction],
-        "handlePierceXValueChange": [MockFunction],
-        "handlePreciseXChange": [MockFunction],
-        "handlePreciseXValueChange": [MockFunction],
-        "handleRamXChange": [MockFunction],
-        "handleRamXValueChange": [MockFunction],
-        "handleSharpshooterXChange": [MockFunction],
-        "handleSharpshooterXValueChange": [MockFunction],
-        "handleSurgeConversionChange": [MockFunction],
-        "incrementAimTokenCount": [MockFunction],
-        "incrementBlackDice": [MockFunction],
-        "incrementRedDice": [MockFunction],
-        "incrementSurgeTokenCount": [MockFunction],
-        "incrementWhiteDice": [MockFunction],
-        "resetDiceCount": [MockFunction],
-        "resetTokenCounts": [MockFunction],
-      }
-    }
-    tokens={
-      Object {
-        "aim": 0,
-        "surge": 0,
-      }
-    }
-  />
-  <div
-    className="d-flex justify-content-center my-2"
-  >
-    <span
-      className="mx-2 my-auto drop-down-label"
+  <div>
+    <h2
+      class="d-flex justify-content-center my-2"
     >
-      Surge:
-    </span>
-    <select
-      className="rounded-lg mr-4 px-2"
-      onChange={[Function]}
-      value={1}
+      Attack
+      <button
+        class="btn btn-light border rounded-lg load-profile-button mx-2 my-auto"
+        data-target="#attackProfileDialog"
+        data-toggle="modal"
+        title="Load attack profile"
+      />
+    </h2>
+    <div
+      class="d-flex justify-content-center my-2"
     >
-      <option
-        value="1"
+      <button
+        class="btn border border-secondary rounded-lg die-counter mx-1 btn-danger"
       >
-        Blank
-      </option>
-      <option
-        value="2"
+        0
+      </button>
+      <button
+        class="btn border border-secondary rounded-lg die-counter mx-1 btn-dark"
       >
-        Hit
-      </option>
-      <option
-        value="3"
+        0
+      </button>
+      <button
+        class="btn border border-secondary rounded-lg die-counter mx-1 btn-light"
       >
-        Critical
-      </option>
-    </select>
+        0
+      </button>
+      <button
+        class="btn btn-secondary border rounded-lg clear-button mx-2 my-auto"
+        title="Clear attack dice"
+      />
+    </div>
+    <div>
+      <div
+        class="single-result justify-content-center my-2"
+      >
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-aim"
+            title="Aim"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-surge"
+            title="Surge"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <button
+          class="btn btn-secondary border rounded-lg clear-button mx-2 my-auto"
+          title="Clear attack tokens"
+        />
+      </div>
+    </div>
+    <div
+      class="d-flex justify-content-center my-2"
+    >
+      <span
+        class="mx-2 my-auto drop-down-label"
+      >
+        Surge:
+      </span>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          Blank
+        </option>
+        <option
+          value="2"
+        >
+          Hit
+        </option>
+        <option
+          value="3"
+        >
+          Critical
+        </option>
+      </select>
+    </div>
+    <div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="blastToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="blastToggle"
+        >
+          Blast
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="criticalXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="criticalXToggle"
+        >
+          Critical
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="duelistAttackToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="duelistAttackToggle"
+        >
+          Duelist
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="highVelocityToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="highVelocityToggle"
+        >
+          High Velocity
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="impactXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="impactXToggle"
+        >
+          Impact
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+          <option
+            value="5"
+          >
+            5
+          </option>
+          <option
+            value="6"
+          >
+            6
+          </option>
+          <option
+            value="7"
+          >
+            7
+          </option>
+          <option
+            value="8"
+          >
+            8
+          </option>
+          <option
+            value="9"
+          >
+            9
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="ionXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="ionXToggle"
+        >
+          Ion
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="jediHunterToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="jediHunterToggle"
+        >
+          Jedi Hunter
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="lethalXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="lethalXToggle"
+        >
+          Lethal
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="makashiMasteryToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="makashiMasteryToggle"
+        >
+          Makashi Mastery
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="marksmanXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="marksmanXToggle"
+        >
+          Marksman
+        </label>
+        <a
+          class="btn popover-button"
+          data-content="Marksman is not yet fully optimized for some edge cases, especially against Armor X."
+          data-placement="top"
+          data-toggle="popover"
+          data-trigger="focus"
+          id="marksmanXToggle-abilitytoggle-popover"
+          role="button"
+          tabindex="0"
+          title="Info"
+        />
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="pierceXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="pierceXToggle"
+        >
+          Pierce
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="preciseXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="preciseXToggle"
+        >
+          Precise
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="ramXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="ramXToggle"
+        >
+          Ram
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="sharpshooterXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="sharpshooterXToggle"
+        >
+          Sharpshooter
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+        </select>
+      </div>
+    </div>
   </div>
-  <AttackAbilities
-    eventHandlers={
-      Object {
-        "handleBlastChange": [MockFunction],
-        "handleCriticalXChange": [MockFunction],
-        "handleCriticalXValueChange": [MockFunction],
-        "handleDuelistChange": [MockFunction],
-        "handleHighVelocityChange": [MockFunction],
-        "handleImpactXChange": [MockFunction],
-        "handleImpactXValueChange": [MockFunction],
-        "handleIonXChange": [MockFunction],
-        "handleIonXValueChange": [MockFunction],
-        "handleJediHunterChange": [MockFunction],
-        "handleLethalXChange": [MockFunction],
-        "handleLethalXValueChange": [MockFunction],
-        "handleMakashiMasteryChange": [MockFunction],
-        "handleMarksmanChange": [MockFunction],
-        "handlePierceXChange": [MockFunction],
-        "handlePierceXValueChange": [MockFunction],
-        "handlePreciseXChange": [MockFunction],
-        "handlePreciseXValueChange": [MockFunction],
-        "handleRamXChange": [MockFunction],
-        "handleRamXValueChange": [MockFunction],
-        "handleSharpshooterXChange": [MockFunction],
-        "handleSharpshooterXValueChange": [MockFunction],
-        "handleSurgeConversionChange": [MockFunction],
-        "incrementAimTokenCount": [MockFunction],
-        "incrementBlackDice": [MockFunction],
-        "incrementRedDice": [MockFunction],
-        "incrementSurgeTokenCount": [MockFunction],
-        "incrementWhiteDice": [MockFunction],
-        "resetDiceCount": [MockFunction],
-        "resetTokenCounts": [MockFunction],
-      }
-    }
-    input={
-      Object {
-        "blackDice": 0,
-        "blast": false,
-        "criticalX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "duelist": false,
-        "highVelocity": false,
-        "impactX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "ionX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "jediHunter": false,
-        "lethalX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "makashiMastery": false,
-        "marksman": false,
-        "pierceX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "preciseX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "ramX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "redDice": 0,
-        "sharpshooterX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "surge": 1,
-        "tokens": Object {
-          "aim": 0,
-          "surge": 0,
-        },
-        "whiteDice": 0,
-      }
-    }
-    showSimpleView={false}
-  />
 </div>
 `;
 
 exports[`Attack matches the snapshot for simplified view 1`] = `
 <div>
-  <h2
-    className="d-flex justify-content-center my-2"
-  >
-    Attack
-    <LoadProfileButton
-      tooltip="Load attack profile"
-    />
-  </h2>
-  <div
-    className="d-flex justify-content-center my-2"
-  >
-    <DieCounter
-      count={0}
-      onClick={[MockFunction]}
-      styleName="btn-danger"
-    />
-    <DieCounter
-      count={0}
-      onClick={[MockFunction]}
-      styleName="btn-dark"
-    />
-    <DieCounter
-      count={0}
-      onClick={[MockFunction]}
-      styleName="btn-light"
-    />
-    <ClearButton
-      onClick={[MockFunction]}
-      tooltip="Clear attack dice"
-    />
-  </div>
-  <AttackTokens
-    eventHandlers={
-      Object {
-        "handleBlastChange": [MockFunction],
-        "handleCriticalXChange": [MockFunction],
-        "handleCriticalXValueChange": [MockFunction],
-        "handleDuelistChange": [MockFunction],
-        "handleHighVelocityChange": [MockFunction],
-        "handleImpactXChange": [MockFunction],
-        "handleImpactXValueChange": [MockFunction],
-        "handleIonXChange": [MockFunction],
-        "handleIonXValueChange": [MockFunction],
-        "handleJediHunterChange": [MockFunction],
-        "handleLethalXChange": [MockFunction],
-        "handleLethalXValueChange": [MockFunction],
-        "handleMakashiMasteryChange": [MockFunction],
-        "handleMarksmanChange": [MockFunction],
-        "handlePierceXChange": [MockFunction],
-        "handlePierceXValueChange": [MockFunction],
-        "handlePreciseXChange": [MockFunction],
-        "handlePreciseXValueChange": [MockFunction],
-        "handleRamXChange": [MockFunction],
-        "handleRamXValueChange": [MockFunction],
-        "handleSharpshooterXChange": [MockFunction],
-        "handleSharpshooterXValueChange": [MockFunction],
-        "handleSurgeConversionChange": [MockFunction],
-        "incrementAimTokenCount": [MockFunction],
-        "incrementBlackDice": [MockFunction],
-        "incrementRedDice": [MockFunction],
-        "incrementSurgeTokenCount": [MockFunction],
-        "incrementWhiteDice": [MockFunction],
-        "resetDiceCount": [MockFunction],
-        "resetTokenCounts": [MockFunction],
-      }
-    }
-    tokens={
-      Object {
-        "aim": 0,
-        "surge": 0,
-      }
-    }
-  />
-  <div
-    className="d-flex justify-content-center my-2"
-  >
-    <span
-      className="mx-2 my-auto drop-down-label"
+  <div>
+    <h2
+      class="d-flex justify-content-center my-2"
     >
-      Surge:
-    </span>
-    <select
-      className="rounded-lg mr-4 px-2"
-      onChange={[Function]}
-      value={1}
+      Attack
+      <button
+        class="btn btn-light border rounded-lg load-profile-button mx-2 my-auto"
+        data-target="#attackProfileDialog"
+        data-toggle="modal"
+        title="Load attack profile"
+      />
+    </h2>
+    <div
+      class="d-flex justify-content-center my-2"
     >
-      <option
-        value="1"
+      <button
+        class="btn border border-secondary rounded-lg die-counter mx-1 btn-danger"
       >
-        Blank
-      </option>
-      <option
-        value="2"
+        0
+      </button>
+      <button
+        class="btn border border-secondary rounded-lg die-counter mx-1 btn-dark"
       >
-        Hit
-      </option>
-      <option
-        value="3"
+        0
+      </button>
+      <button
+        class="btn border border-secondary rounded-lg die-counter mx-1 btn-light"
       >
-        Critical
-      </option>
-    </select>
+        0
+      </button>
+      <button
+        class="btn btn-secondary border rounded-lg clear-button mx-2 my-auto"
+        title="Clear attack dice"
+      />
+    </div>
+    <div>
+      <div
+        class="single-result justify-content-center my-2"
+      >
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-aim"
+            title="Aim"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <div
+          class="collapse.show token-parent"
+        >
+          <button
+            class="btn border btn-light border-secondary rounded-lg mx-1 token-counter-surge"
+            title="Surge"
+          />
+          <span
+            class="token-count"
+          >
+            0
+          </span>
+        </div>
+        <button
+          class="btn btn-secondary border rounded-lg clear-button mx-2 my-auto"
+          title="Clear attack tokens"
+        />
+      </div>
+    </div>
+    <div
+      class="d-flex justify-content-center my-2"
+    >
+      <span
+        class="mx-2 my-auto drop-down-label"
+      >
+        Surge:
+      </span>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="1"
+        >
+          Blank
+        </option>
+        <option
+          value="2"
+        >
+          Hit
+        </option>
+        <option
+          value="3"
+        >
+          Critical
+        </option>
+      </select>
+    </div>
+    <div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="blastToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="blastToggle"
+        >
+          Blast
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="criticalXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="criticalXToggle"
+        >
+          Critical
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+        </select>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="duelistAttackToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="duelistAttackToggle"
+        >
+          Duelist
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="highVelocityToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="highVelocityToggle"
+        >
+          High Velocity
+        </label>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="impactXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="impactXToggle"
+        >
+          Impact
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+          <option
+            value="5"
+          >
+            5
+          </option>
+          <option
+            value="6"
+          >
+            6
+          </option>
+          <option
+            value="7"
+          >
+            7
+          </option>
+          <option
+            value="8"
+          >
+            8
+          </option>
+          <option
+            value="9"
+          >
+            9
+          </option>
+        </select>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="ionXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="ionXToggle"
+        >
+          Ion
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+        </select>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="jediHunterToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="jediHunterToggle"
+        >
+          Jedi Hunter
+        </label>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="lethalXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="lethalXToggle"
+        >
+          Lethal
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+        </select>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="makashiMasteryToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="makashiMasteryToggle"
+        >
+          Makashi Mastery
+        </label>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="marksmanXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="marksmanXToggle"
+        >
+          Marksman
+        </label>
+        <a
+          class="btn popover-button"
+          data-content="Marksman is not yet fully optimized for some edge cases, especially against Armor X."
+          data-placement="top"
+          data-toggle="popover"
+          data-trigger="focus"
+          id="marksmanXToggle-abilitytoggle-popover"
+          role="button"
+          tabindex="0"
+          title="Info"
+        />
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="pierceXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="pierceXToggle"
+        >
+          Pierce
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="preciseXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="preciseXToggle"
+        >
+          Precise
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
+      <div
+        class="collapse justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="ramXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="ramXToggle"
+        >
+          Ram
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+        </select>
+      </div>
+      <div
+        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+      >
+        <input
+          class="custom-control-input my-auto"
+          id="sharpshooterXToggle"
+          type="checkbox"
+        />
+        <label
+          class="custom-control-label drop-down-label mx-2 my-auto"
+          for="sharpshooterXToggle"
+        >
+          Sharpshooter
+        </label>
+        <select
+          class="rounded-lg mr-4 px-2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+        </select>
+      </div>
+    </div>
   </div>
-  <AttackAbilities
-    eventHandlers={
-      Object {
-        "handleBlastChange": [MockFunction],
-        "handleCriticalXChange": [MockFunction],
-        "handleCriticalXValueChange": [MockFunction],
-        "handleDuelistChange": [MockFunction],
-        "handleHighVelocityChange": [MockFunction],
-        "handleImpactXChange": [MockFunction],
-        "handleImpactXValueChange": [MockFunction],
-        "handleIonXChange": [MockFunction],
-        "handleIonXValueChange": [MockFunction],
-        "handleJediHunterChange": [MockFunction],
-        "handleLethalXChange": [MockFunction],
-        "handleLethalXValueChange": [MockFunction],
-        "handleMakashiMasteryChange": [MockFunction],
-        "handleMarksmanChange": [MockFunction],
-        "handlePierceXChange": [MockFunction],
-        "handlePierceXValueChange": [MockFunction],
-        "handlePreciseXChange": [MockFunction],
-        "handlePreciseXValueChange": [MockFunction],
-        "handleRamXChange": [MockFunction],
-        "handleRamXValueChange": [MockFunction],
-        "handleSharpshooterXChange": [MockFunction],
-        "handleSharpshooterXValueChange": [MockFunction],
-        "handleSurgeConversionChange": [MockFunction],
-        "incrementAimTokenCount": [MockFunction],
-        "incrementBlackDice": [MockFunction],
-        "incrementRedDice": [MockFunction],
-        "incrementSurgeTokenCount": [MockFunction],
-        "incrementWhiteDice": [MockFunction],
-        "resetDiceCount": [MockFunction],
-        "resetTokenCounts": [MockFunction],
-      }
-    }
-    input={
-      Object {
-        "blackDice": 0,
-        "blast": false,
-        "criticalX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "duelist": false,
-        "highVelocity": false,
-        "impactX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "ionX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "jediHunter": false,
-        "lethalX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "makashiMastery": false,
-        "marksman": false,
-        "pierceX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "preciseX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "ramX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "redDice": 0,
-        "sharpshooterX": Object {
-          "active": false,
-          "value": 1,
-        },
-        "surge": 1,
-        "tokens": Object {
-          "aim": 0,
-          "surge": 0,
-        },
-        "whiteDice": 0,
-      }
-    }
-    showSimpleView={true}
-  />
 </div>
 `;

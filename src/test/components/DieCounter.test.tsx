@@ -1,33 +1,32 @@
-import React from 'react';
+import React from "react";
 
-import { shallow } from 'enzyme';
-import { create } from 'react-test-renderer';
+import { render, fireEvent } from "@testing-library/react";
 
-import DieCounter from '../../components/DieCounter';
+import DieCounter from "../../components/DieCounter";
 
-describe('DieCounter', () => {
-    it('matches the snapshot', () => {
-        const onClick = jest.fn();
+describe("DieCounter", () => {
+  it("matches the snapshot", () => {
+    const onClick = jest.fn();
 
-        const counter = <DieCounter
-                count={4}
-                styleName='btn-dark'
-                onClick={onClick}
-            ></DieCounter>
-        const snapshot = create(counter);
-        expect(snapshot.toJSON()).toMatchSnapshot();
-    });
+    const { container } = render(
+      <DieCounter count={4} styleName="btn-dark" onClick={onClick}></DieCounter>
+    );
+    expect(container).toMatchSnapshot();
+  });
 
-    it('handles being clicked', () => {
-        const onButtonClickMock = jest.fn();
+  it("handles being clicked", () => {
+    const onButtonClickMock = jest.fn();
 
-        const wrapper = shallow(<DieCounter
-            count={4}
-            styleName='btn-dark'
-            onClick={onButtonClickMock}
-        ></DieCounter>);
-        wrapper.find('.btn').simulate('click');
+    const { container } = render(
+      <DieCounter
+        count={4}
+        styleName="btn-dark"
+        onClick={onButtonClickMock}
+      ></DieCounter>
+    );
+    const btn = container.querySelector(".btn") as HTMLElement;
+    fireEvent.click(btn);
 
-        expect(onButtonClickMock).toHaveBeenCalledTimes(1);
-    })
+    expect(onButtonClickMock).toHaveBeenCalledTimes(1);
+  });
 });

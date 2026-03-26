@@ -1,93 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AbilityXToggle matches the snapshot 1`] = `
-<div
-  className="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
->
-  <input
-    checked={true}
-    className="custom-control-input my-auto"
-    id="testAbility"
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <label
-    className="custom-control-label drop-down-label mx-2 my-auto"
-    htmlFor="testAbility"
+<div>
+  <div
+    class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
   >
-    Test
-  </label>
-  <select
-    className="rounded-lg mr-4 px-2"
-    onChange={[Function]}
-    value={1}
-  >
-    <option
-      value={1}
+    <input
+      checked=""
+      class="custom-control-input my-auto"
+      id="testAbility"
+      type="checkbox"
+    />
+    <label
+      class="custom-control-label drop-down-label mx-2 my-auto"
+      for="testAbility"
     >
-      1
-    </option>
-    <option
-      value={2}
+      Test
+    </label>
+    <select
+      class="rounded-lg mr-4 px-2"
     >
-      2
-    </option>
-    <option
-      value={3}
-    >
-      3
-    </option>
-    <option
-      value={4}
-    >
-      4
-    </option>
-  </select>
+      <option
+        value="1"
+      >
+        1
+      </option>
+      <option
+        value="2"
+      >
+        2
+      </option>
+      <option
+        value="3"
+      >
+        3
+      </option>
+      <option
+        value="4"
+      >
+        4
+      </option>
+    </select>
+  </div>
 </div>
 `;
 
 exports[`AbilityXToggle matches the snapshot when hidden 1`] = `
-<div
-  className="collapse justify-content-center my-3 custom-control custom-switch"
->
-  <input
-    checked={true}
-    className="custom-control-input my-auto"
-    id="testAbility"
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <label
-    className="custom-control-label drop-down-label mx-2 my-auto"
-    htmlFor="testAbility"
+<div>
+  <div
+    class="collapse justify-content-center my-3 custom-control custom-switch"
   >
-    Test
-  </label>
-  <select
-    className="rounded-lg mr-4 px-2"
-    onChange={[Function]}
-    value={1}
-  >
-    <option
-      value={1}
+    <input
+      checked=""
+      class="custom-control-input my-auto"
+      id="testAbility"
+      type="checkbox"
+    />
+    <label
+      class="custom-control-label drop-down-label mx-2 my-auto"
+      for="testAbility"
     >
-      1
-    </option>
-    <option
-      value={2}
+      Test
+    </label>
+    <select
+      class="rounded-lg mr-4 px-2"
     >
-      2
-    </option>
-    <option
-      value={3}
-    >
-      3
-    </option>
-    <option
-      value={4}
-    >
-      4
-    </option>
-  </select>
+      <option
+        value="1"
+      >
+        1
+      </option>
+      <option
+        value="2"
+      >
+        2
+      </option>
+      <option
+        value="3"
+      >
+        3
+      </option>
+      <option
+        value="4"
+      >
+        4
+      </option>
+    </select>
+  </div>
 </div>
 `;

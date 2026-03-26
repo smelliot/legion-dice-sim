@@ -1,51 +1,55 @@
-import React from 'react';
+import React from "react";
 
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { render, fireEvent } from "@testing-library/react";
 
-import TokenCounter from '../../components/TokenCounter';
+import TokenCounter from "../../components/TokenCounter";
 
-describe('TokenCounter', () => {
-    it('matches the snapshot', () => {
-        const onClick = jest.fn();
+describe("TokenCounter", () => {
+  it("matches the snapshot", () => {
+    const onClick = jest.fn();
 
-        const counter = shallow(<TokenCounter
-            visible={true}
-            value={3}
-            onClick={onClick}
-            tokenCssClass='token-counter-aim'
-            tooltip='Helpful text'
-            ></TokenCounter>);
-        const snapshot = shallowToJson(counter);
-        expect(snapshot).toMatchSnapshot();
-    });
+    const { container } = render(
+      <TokenCounter
+        visible={true}
+        value={3}
+        onClick={onClick}
+        tokenCssClass="token-counter-aim"
+        tooltip="Helpful text"
+      ></TokenCounter>
+    );
+    expect(container).toMatchSnapshot();
+  });
 
-    it('matches the snapshot when not visible', () => {
-        const onClick = jest.fn();
+  it("matches the snapshot when not visible", () => {
+    const onClick = jest.fn();
 
-        const counter = shallow(<TokenCounter
-            visible={false}
-            value={1}
-            onClick={onClick}
-            tokenCssClass='token-counter-observe'
-            tooltip='Watching!'
-            ></TokenCounter>);
-        const snapshot = shallowToJson(counter);
-        expect(snapshot).toMatchSnapshot();
-    });
+    const { container } = render(
+      <TokenCounter
+        visible={false}
+        value={1}
+        onClick={onClick}
+        tokenCssClass="token-counter-observe"
+        tooltip="Watching!"
+      ></TokenCounter>
+    );
+    expect(container).toMatchSnapshot();
+  });
 
-    it('handles being clicked', () => {
-        const onClick = jest.fn();
+  it("handles being clicked", () => {
+    const onClick = jest.fn();
 
-        const wrapper = shallow(<TokenCounter
-            visible={true}
-            value={2}
-            onClick={onClick}
-            tokenCssClass='token-counter-dodge'
-            tooltip='Dodging...'
-            ></TokenCounter>);
-        wrapper.find('.btn').simulate('click');
+    const { container } = render(
+      <TokenCounter
+        visible={true}
+        value={2}
+        onClick={onClick}
+        tokenCssClass="token-counter-dodge"
+        tooltip="Dodging..."
+      ></TokenCounter>
+    );
+    const btn = container.querySelector(".btn") as HTMLElement;
+    fireEvent.click(btn);
 
-        expect(onClick).toHaveBeenCalledTimes(1);
-    })
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
 });
