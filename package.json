@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.6.0",
-    "@testing-library/react": "^16.1.0",
-    "@testing-library/user-event": "^14.5.0",
-    "ajv": "^8.17.1",
     "highcharts": "^12.1.0",
     "highcharts-react-official": "^3.2.0",
     "jquery": "^3.7.0",
@@ -15,61 +10,39 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.0",
-    "react-scripts": "5.0.1",
-    "sass": "^1.83.0",
     "web-vitals": "^4.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --maxWorkers=3 --colors --coverage --watchAll=false",
-    "test-us": "react-scripts test -u --maxWorkers=3 --colors --coverage --watchAll=false",
-    "testWatch": "react-scripts test",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "jest --maxWorkers=3 --colors --coverage",
+    "test-us": "jest -u --maxWorkers=3 --colors --coverage",
+    "testWatch": "jest --watch",
     "scss": "sass --watch src/scss:src/css",
     "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet",
     "lint-all": "eslint 'src/**/*.{js,ts,tsx}'",
     "lint-fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
     "cloc": "cloc ./src --include-lang='TypeScript,Sass,JSON'"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.6.0",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.0",
     "@types/bootstrap": "^5.2.0",
     "@types/jest": "^29.5.0",
     "@types/jquery": "^3.5.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "typescript": "^5.7.0"
-  },
-  "jest": {
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "text",
-      "clover",
-      "cobertura"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!src/**/*.d.ts",
-      "!src/index.tsx",
-      "!src/**/test/**"
-    ]
+    "@vitejs/plugin-react": "^4.3.0",
+    "ajv": "^8.17.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "sass": "^1.83.0",
+    "ts-jest": "^29.2.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0"
   }
 }
