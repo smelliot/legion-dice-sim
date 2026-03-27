@@ -1,127 +1,65 @@
-# This builds the main branch and deploys to the environments on push or on-demand.
+# Builds and deploys to GitHub Pages on push to main or on-demand.
 
 name: CD
 
-# Controls when the action will run.
 on:
-  # Triggers the workflow on push events but only for the main branch
   push:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches: [main]
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# Sets permissions needed for GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skip in-progress runs
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm install typescript
-          npm run build
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
 
       - name: Run tests
-        run: |
-          npm run test
+        run: yarn test
 
-      - name: Publish build output
-        uses: actions/upload-artifact@v2
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: build-output
           path: build/
 
-  deploy-dev:
-    name: Deploy dev environment
+  deploy:
+    name: Deploy to GitHub Pages
 
     runs-on: ubuntu-latest
 
-    needs:
-      - build
+    needs: build
 
     environment:
-      name: "TellMeTheOdds-Dev"
-      url: "http://dev.tellmetheodds.net"
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v2.0.8
-        with:
-          name: 'build-output'
-          path: build
-
-      - name: Upload to Azure
-        uses: bacongobbler/azure-blob-storage-upload@v2.0.0
-        with:
-          source_dir: 'build'
-          container_name: '$web'
-          connection_string: ${{ secrets.StorageAccountConnectionString }}
-          sync: 'true'
-#          overwrite: 'true'
-
-  deploy-beta:
-    name: Deploy beta environment
-
-    runs-on: ubuntu-latest
-
-    needs:
-      - deploy-dev
-
-    environment:
-      name: "TellMeTheOdds-Beta"
-      url: "http://beta.tellmetheodds.net"
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v2.0.8
-        with:
-          name: 'build-output'
-          path: build
-
-      - name: Upload to Azure
-        uses: bacongobbler/azure-blob-storage-upload@v2.0.0
-        with:
-          source_dir: 'build'
-          container_name: '$web'
-          connection_string: ${{ secrets.StorageAccountConnectionString }}
-          sync: 'true'
-#          overwrite: 'true'
-
-  deploy-production:
-    name: Deploy production environment
-
-    runs-on: ubuntu-latest
-
-    needs:
-      - deploy-dev
-
-    environment:
-      name: "TellMeTheOdds-Prod"
-      url: "https://www.tellmetheodds.net"
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v2.0.8
-        with:
-          name: 'build-output'
-          path: build
-
-      - name: Upload to Azure
-        uses: bacongobbler/azure-blob-storage-upload@v2.0.0
-        with:
-          source_dir: 'build'
-          container_name: '$web'
-          connection_string: ${{ secrets.StorageAccountConnectionString }}
-          sync: 'true'
-#          overwrite: 'true'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

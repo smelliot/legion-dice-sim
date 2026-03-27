@@ -2,6 +2,9 @@
   "name": "legion-dice-sim",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
     "highcharts": "^12.1.0",
     "highcharts-react-official": "^3.2.0",

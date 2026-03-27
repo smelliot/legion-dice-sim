@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on pull request events but only for the main branch
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,31 +17,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm install typescript
-          npm run build
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
 
       - name: Run tests
-        run: |
-          npm run test
+        run: yarn test
 
       - name: Run lint
-        run: |
-          npm run lint
+        run: yarn lint
+
+      - name: Check formatting
+        run: yarn format:check
 
       - name: Publish code coverage
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: code-coverage
           path: coverage/lcov-report
 
       - name: Publish build output
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: build-output
           path: build/
