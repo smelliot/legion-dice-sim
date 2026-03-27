@@ -70,10 +70,26 @@ export function getMarksmanConversions(
     let workingMiss = startingMiss;
 
     if (input.combat.guardian.active) {
-      const guardian = Math.min(workingHits, input.combat.guardian.value);
-      workingMiss += guardian;
-      workingHits -= guardian;
-      lostHits += guardian;
+      if (input.combat.protector) {
+        const critGuardian = Math.min(
+          workingCrits,
+          input.combat.guardian.value
+        );
+        workingMiss += critGuardian;
+        workingCrits -= critGuardian;
+        const hitGuardian = Math.min(
+          workingHits,
+          input.combat.guardian.value - critGuardian
+        );
+        workingMiss += hitGuardian;
+        workingHits -= hitGuardian;
+        lostHits += hitGuardian;
+      } else {
+        const guardian = Math.min(workingHits, input.combat.guardian.value);
+        workingMiss += guardian;
+        workingHits -= guardian;
+        lostHits += guardian;
+      }
     }
 
     const effectiveCover = Math.min(cover, workingHits);

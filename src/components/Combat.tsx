@@ -26,6 +26,13 @@ function Combat(props: CombatProps): React.JSX.Element {
         maxValue={12}
       ></AbilityXToggle>
       <AbilityToggle
+        id="protectorToggle"
+        label="Protector"
+        visible={true}
+        active={props.input.protector}
+        onActiveChanged={props.eventHandlers.handleProtectorChange}
+      ></AbilityToggle>
+      <AbilityToggle
         id="meleeAttackToggle"
         label="Melee Attack"
         visible={true}

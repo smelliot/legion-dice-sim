@@ -73,6 +73,7 @@ export function createMockAppStateCombatEventHandlers(): AS.AppStateCombatEventH
   return {
     handleGuardianXChange: jest.fn(),
     handleGuardianXValueChange: jest.fn(),
+    handleProtectorChange: jest.fn(),
     handleMeleeAttackChange: jest.fn(),
   };
 }

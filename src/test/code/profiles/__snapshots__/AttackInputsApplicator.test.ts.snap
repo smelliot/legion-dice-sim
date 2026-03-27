@@ -7,6 +7,7 @@ exports[`AttackInputApplicator applies a commander unit: Emperor Palpatine - Def
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -68,6 +69,7 @@ exports[`AttackInputApplicator applies a heavy unit: X-34 Landspeeder - Default 
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -129,6 +131,7 @@ exports[`AttackInputApplicator applies a special forces unit: ARC Troopers - Def
     "value": 1,
   },
   "meleeAttack": true,
+  "protector": false,
 }
 `;
 
@@ -190,6 +193,7 @@ exports[`AttackInputApplicator applies a support unit: Droidekas - Default Comba
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -251,6 +255,7 @@ exports[`AttackInputApplicator applies a trooper unit: Rebel Troopers - Default 
     "value": 1,
   },
   "meleeAttack": true,
+  "protector": false,
 }
 `;
 
@@ -312,6 +317,7 @@ exports[`AttackInputApplicator applies an operative unit: Cad Bane - Default Com
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -373,6 +379,7 @@ exports[`AttackInputApplicator applies blast upgrade: Rebel Troopers - Concussio
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -434,6 +441,7 @@ exports[`AttackInputApplicator handles armament upgrade with base weapon - no ar
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -495,6 +503,7 @@ exports[`AttackInputApplicator handles armament upgrade with base weapon with ar
     "value": 1,
   },
   "meleeAttack": true,
+  "protector": false,
 }
 `;
 
@@ -556,6 +565,7 @@ exports[`AttackInputApplicator handles armament upgrade: Jyn Erso - A-180 Pistol
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -617,6 +627,7 @@ exports[`AttackInputApplicator handles counterpart upgrade: BARC Speeder - BARC 
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -678,6 +689,7 @@ exports[`AttackInputApplicator handles counterpart upgrade: Iden Versio - Iden's
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -739,6 +751,7 @@ exports[`AttackInputApplicator handles force upgrade: Darth Vader (Commander) - 
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -800,6 +813,7 @@ exports[`AttackInputApplicator handles gear upgrade: Stormtroopers - Targeting S
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -861,6 +875,7 @@ exports[`AttackInputApplicator handles generator upgrade without fixed position 
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -922,6 +937,7 @@ exports[`AttackInputApplicator handles generator upgrade: E-Web - Overcharged Ge
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -983,6 +999,7 @@ exports[`AttackInputApplicator handles hardpoint upgrade - incompatible arc: T-4
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1044,6 +1061,7 @@ exports[`AttackInputApplicator handles hardpoint upgrade: TX-130 Saber-class Fig
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1105,6 +1123,7 @@ exports[`AttackInputApplicator handles high velocity upgrade with high velocity 
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1166,6 +1185,7 @@ exports[`AttackInputApplicator handles high velocity upgrade without default wea
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1227,6 +1247,7 @@ exports[`AttackInputApplicator handles high velocity upgrade without high veloci
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1288,6 +1309,7 @@ exports[`AttackInputApplicator handles non-high velocity upgrade with high veloc
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1349,6 +1371,7 @@ exports[`AttackInputApplicator handles personnel upgrade - non-combatant: Rebel 
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1410,6 +1433,7 @@ exports[`AttackInputApplicator handles personnel upgrade with sidearm - melee vs
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1471,6 +1495,7 @@ exports[`AttackInputApplicator handles personnel upgrade with sidearm: B2 Super 
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1532,6 +1557,7 @@ exports[`AttackInputApplicator handles personnel upgrade: Rebel Troopers - Rebel
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1593,6 +1619,7 @@ exports[`AttackInputApplicator handles pilot upgrade: X-34 Landspeeder - Hotshot
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1654,6 +1681,7 @@ exports[`AttackInputApplicator handles upgrade with arsenal: AT-ST - General Wei
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 
@@ -1715,6 +1743,7 @@ exports[`AttackInputApplicator handles upgrade with surge -> critical conversion
     "value": 1,
   },
   "meleeAttack": false,
+  "protector": false,
 }
 `;
 

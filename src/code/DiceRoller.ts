@@ -714,11 +714,26 @@ export class DiceRoller {
       modifiedInput.combat.guardian.active &&
       !modifiedInput.combat.meleeAttack
     ) {
-      status.modificationMatrix.tryConvertResultCount(
-        T.AttackDieResult.Hit,
-        T.AttackDieResult.Miss,
-        modifiedInput.combat.guardian.value
-      );
+      if (modifiedInput.combat.protector) {
+        // protector: guardian can cancel hits and crits
+        const guardianValue = modifiedInput.combat.guardian.value;
+        const critsConverted = status.modificationMatrix.tryConvertResultCount(
+          T.AttackDieResult.Critical,
+          T.AttackDieResult.Miss,
+          guardianValue
+        );
+        status.modificationMatrix.tryConvertResultCount(
+          T.AttackDieResult.Hit,
+          T.AttackDieResult.Miss,
+          guardianValue - critsConverted
+        );
+      } else {
+        status.modificationMatrix.tryConvertResultCount(
+          T.AttackDieResult.Hit,
+          T.AttackDieResult.Miss,
+          modifiedInput.combat.guardian.value
+        );
+      }
     }
   }
 

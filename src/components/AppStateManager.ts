@@ -81,6 +81,7 @@ export type AppStateDefenseEventHandlers = {
 export type AppStateCombatEventHandlers = {
   handleGuardianXChange: (active: boolean) => void;
   handleGuardianXValueChange: (value: number) => void;
+  handleProtectorChange: (active: boolean) => void;
   handleMeleeAttackChange: (isMeleeAttack: boolean) => void;
 };
 
@@ -823,6 +824,8 @@ export class AppStateManager {
         this.handleGuardianXChange(active),
       handleGuardianXValueChange: (value: number) =>
         this.handleGuardianXValueChange(value),
+      handleProtectorChange: (active: boolean) =>
+        this.handleProtectorChange(active),
       handleMeleeAttackChange: (isMeleeAttack: boolean) =>
         this.handleMeleeAttackChange(isMeleeAttack),
     };
@@ -837,6 +840,12 @@ export class AppStateManager {
   private handleGuardianXValueChange(value: number) {
     const newState = this.cloneState();
     newState.inputs.combat.guardian.value = value;
+    this.setState(newState);
+  }
+
+  private handleProtectorChange(active: boolean) {
+    const newState = this.cloneState();
+    newState.inputs.combat.protector = active;
     this.setState(newState);
   }
 

@@ -1817,6 +1817,21 @@ exports[`App handles simple view 1`] = `
             >
               <input
                 class="custom-control-input my-auto"
+                id="protectorToggle"
+                type="checkbox"
+              />
+              <label
+                class="custom-control-label drop-down-label mx-2 my-auto"
+                for="protectorToggle"
+              >
+                Protector
+              </label>
+            </div>
+            <div
+              class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+            >
+              <input
+                class="custom-control-input my-auto"
                 id="meleeAttackToggle"
                 type="checkbox"
               />
@@ -3879,6 +3894,21 @@ exports[`App matches the snapshot 1`] = `
                   12
                 </option>
               </select>
+            </div>
+            <div
+              class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+            >
+              <input
+                class="custom-control-input my-auto"
+                id="protectorToggle"
+                type="checkbox"
+              />
+              <label
+                class="custom-control-label drop-down-label mx-2 my-auto"
+                for="protectorToggle"
+              >
+                Protector
+              </label>
             </div>
             <div
               class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
