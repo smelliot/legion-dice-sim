@@ -13,6 +13,21 @@ exports[`Combat matches the snapshot 1`] = `
     >
       <input
         class="custom-control-input my-auto"
+        id="backupToggle"
+        type="checkbox"
+      />
+      <label
+        class="custom-control-label drop-down-label mx-2 my-auto"
+        for="backupToggle"
+      >
+        Backup
+      </label>
+    </div>
+    <div
+      class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+    >
+      <input
+        class="custom-control-input my-auto"
         id="guardianXToggle"
         type="checkbox"
       />

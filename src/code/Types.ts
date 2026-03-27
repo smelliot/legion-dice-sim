@@ -100,6 +100,7 @@ export type DefenseInput = {
 };
 
 export type CombatInput = {
+  backup: boolean;
   guardian: AbilityX;
   protector: boolean;
   meleeAttack: boolean;
@@ -221,6 +222,7 @@ export function createDefaultAttackInput(): AttackInput {
       uncannyLuckX: { active: false, value: 1 },
     },
     combat: {
+      backup: false,
       guardian: { active: false, value: 1 },
       protector: false,
       meleeAttack: false,
@@ -292,6 +294,7 @@ export function cloneAttackInput(original: AttackInput): AttackInput {
       uncannyLuckX: copyAbilityX(original.defense.uncannyLuckX),
     },
     combat: {
+      backup: original.combat.backup,
       guardian: copyAbilityX(original.combat.guardian),
       protector: original.combat.protector,
       meleeAttack: original.combat.meleeAttack,

@@ -2,6 +2,7 @@
 
 exports[`AttackInputApplicator applies a commander unit: Emperor Palpatine - Default Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -64,6 +65,7 @@ exports[`AttackInputApplicator applies a commander unit: Emperor Palpatine - Def
 
 exports[`AttackInputApplicator applies a heavy unit: X-34 Landspeeder - Default Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -126,6 +128,7 @@ exports[`AttackInputApplicator applies a heavy unit: X-34 Landspeeder - Default 
 
 exports[`AttackInputApplicator applies a special forces unit: ARC Troopers - Default Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -188,6 +191,7 @@ exports[`AttackInputApplicator applies a special forces unit: ARC Troopers - Def
 
 exports[`AttackInputApplicator applies a support unit: Droidekas - Default Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -250,6 +254,7 @@ exports[`AttackInputApplicator applies a support unit: Droidekas - Default Offen
 
 exports[`AttackInputApplicator applies a trooper unit: Rebel Troopers - Default Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -312,6 +317,7 @@ exports[`AttackInputApplicator applies a trooper unit: Rebel Troopers - Default 
 
 exports[`AttackInputApplicator applies an operative unit: Cad Bane - Default Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -374,6 +380,7 @@ exports[`AttackInputApplicator applies an operative unit: Cad Bane - Default Off
 
 exports[`AttackInputApplicator applies blast upgrade: Rebel Troopers - Concussion Grenades Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -436,6 +443,7 @@ exports[`AttackInputApplicator applies blast upgrade: Rebel Troopers - Concussio
 
 exports[`AttackInputApplicator handles armament upgrade with base weapon - no arsenal: Jyn Erso - A-180 Pistol Config + base weapon Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -498,6 +506,7 @@ exports[`AttackInputApplicator handles armament upgrade with base weapon - no ar
 
 exports[`AttackInputApplicator handles armament upgrade with base weapon with arsenal: General Grievous - DT-57 "Annihialator" + base weapon Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -560,6 +569,7 @@ exports[`AttackInputApplicator handles armament upgrade with base weapon with ar
 
 exports[`AttackInputApplicator handles armament upgrade: Jyn Erso - A-180 Pistol Config Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -622,6 +632,7 @@ exports[`AttackInputApplicator handles armament upgrade: Jyn Erso - A-180 Pistol
 
 exports[`AttackInputApplicator handles counterpart upgrade: BARC Speeder - BARC Ion Gunner Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -684,6 +695,7 @@ exports[`AttackInputApplicator handles counterpart upgrade: BARC Speeder - BARC 
 
 exports[`AttackInputApplicator handles counterpart upgrade: Iden Versio - Iden's ID10 Seeker Droid Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -746,6 +758,7 @@ exports[`AttackInputApplicator handles counterpart upgrade: Iden Versio - Iden's
 
 exports[`AttackInputApplicator handles force upgrade: Darth Vader (Commander) - Saber Throw Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -808,6 +821,7 @@ exports[`AttackInputApplicator handles force upgrade: Darth Vader (Commander) - 
 
 exports[`AttackInputApplicator handles gear upgrade: Stormtroopers - Targeting Scopes Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -870,6 +884,7 @@ exports[`AttackInputApplicator handles gear upgrade: Stormtroopers - Targeting S
 
 exports[`AttackInputApplicator handles generator upgrade without fixed position weapon: E-Web - Overcharged Generator - no fixed position Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -932,6 +947,7 @@ exports[`AttackInputApplicator handles generator upgrade without fixed position 
 
 exports[`AttackInputApplicator handles generator upgrade: E-Web - Overcharged Generator Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -994,6 +1010,7 @@ exports[`AttackInputApplicator handles generator upgrade: E-Web - Overcharged Ge
 
 exports[`AttackInputApplicator handles hardpoint upgrade - incompatible arc: T-47 Airspeeder - Mo/Dk Power Harpoon Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1056,6 +1073,7 @@ exports[`AttackInputApplicator handles hardpoint upgrade - incompatible arc: T-4
 
 exports[`AttackInputApplicator handles hardpoint upgrade: TX-130 Saber-class Fighter Tank - TX-130 Twin Laser Turret Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1118,6 +1136,7 @@ exports[`AttackInputApplicator handles hardpoint upgrade: TX-130 Saber-class Fig
 
 exports[`AttackInputApplicator handles high velocity upgrade with high velocity on default weapon: AAT Trade Federation Battle Tank - High-Energy Shells Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1180,6 +1199,7 @@ exports[`AttackInputApplicator handles high velocity upgrade with high velocity 
 
 exports[`AttackInputApplicator handles high velocity upgrade without default weapon: Scout Troopers: Strike Team (no weapon) - DLT-19x Sniper Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1242,6 +1262,7 @@ exports[`AttackInputApplicator handles high velocity upgrade without default wea
 
 exports[`AttackInputApplicator handles high velocity upgrade without high velocity on default weapon: Scout Troopers: Strike Team - DLT-19x Sniper Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1304,6 +1325,7 @@ exports[`AttackInputApplicator handles high velocity upgrade without high veloci
 
 exports[`AttackInputApplicator handles non-high velocity upgrade with high velocity on default weapon: AAT Trade Federation Battle Tank - "Bunker Buster" Shells Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1366,6 +1388,7 @@ exports[`AttackInputApplicator handles non-high velocity upgrade with high veloc
 
 exports[`AttackInputApplicator handles personnel upgrade - non-combatant: Rebel Troopers - R5 Astromech Droid Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1428,6 +1451,7 @@ exports[`AttackInputApplicator handles personnel upgrade - non-combatant: Rebel 
 
 exports[`AttackInputApplicator handles personnel upgrade with sidearm - melee vs. range: Imperial Royal Guards - Electrostaff Guard Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1490,6 +1514,7 @@ exports[`AttackInputApplicator handles personnel upgrade with sidearm - melee vs
 
 exports[`AttackInputApplicator handles personnel upgrade with sidearm: B2 Super Battle Droids - T-Series Tactical Droid Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1552,6 +1577,7 @@ exports[`AttackInputApplicator handles personnel upgrade with sidearm: B2 Super 
 
 exports[`AttackInputApplicator handles personnel upgrade: Rebel Troopers - Rebel Trooper Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1614,6 +1640,7 @@ exports[`AttackInputApplicator handles personnel upgrade: Rebel Troopers - Rebel
 
 exports[`AttackInputApplicator handles pilot upgrade: X-34 Landspeeder - Hotshot Pilot Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1676,6 +1703,7 @@ exports[`AttackInputApplicator handles pilot upgrade: X-34 Landspeeder - Hotshot
 
 exports[`AttackInputApplicator handles upgrade with arsenal: AT-ST - General Weiss + Weapons Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,
@@ -1738,6 +1766,7 @@ exports[`AttackInputApplicator handles upgrade with arsenal: AT-ST - General Wei
 
 exports[`AttackInputApplicator handles upgrade with surge -> critical conversion: Stormtroopers - Fragmentation Grenades Combat 1`] = `
 {
+  "backup": false,
   "guardian": {
     "active": false,
     "value": 1,

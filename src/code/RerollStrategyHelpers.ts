@@ -69,6 +69,13 @@ export function getMarksmanConversions(
     const startingMiss = totalDice - (workingHits + workingCrits);
     let workingMiss = startingMiss;
 
+    if (input.combat.backup && !input.combat.meleeAttack) {
+      const backupCancelled = Math.min(workingHits, 2);
+      workingMiss += backupCancelled;
+      workingHits -= backupCancelled;
+      lostHits += backupCancelled;
+    }
+
     if (input.combat.guardian.active) {
       if (input.combat.protector) {
         const critGuardian = Math.min(

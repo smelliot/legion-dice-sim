@@ -15,6 +15,13 @@ function Combat(props: CombatProps): React.JSX.Element {
   return (
     <div>
       <h2 className="d-flex justify-content-center my-2">Combat</h2>
+      <AbilityToggle
+        id="backupToggle"
+        label="Backup"
+        visible={true}
+        active={props.input.backup}
+        onActiveChanged={props.eventHandlers.handleBackupChange}
+      ></AbilityToggle>
       <AbilityXToggle
         id="guardianXToggle"
         label="Guardian"

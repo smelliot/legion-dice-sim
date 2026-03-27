@@ -709,6 +709,15 @@ export class DiceRoller {
       );
     }
 
+    // backup
+    if (modifiedInput.combat.backup && !modifiedInput.combat.meleeAttack) {
+      status.modificationMatrix.tryConvertResultCount(
+        T.AttackDieResult.Hit,
+        T.AttackDieResult.Miss,
+        2
+      );
+    }
+
     // guardian
     if (
       modifiedInput.combat.guardian.active &&
