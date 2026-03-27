@@ -43,16 +43,6 @@ function Defense(props: DefenseProps): React.JSX.Element {
         eventHandlers={props.eventHandlers}
       ></DefenseTokens>
       <div className="d-flex justify-content-center my-2">
-        <span className="mx-2 my-auto drop-down-label">Cover:</span>
-        <select
-          value={props.input.cover}
-          className="rounded-lg mr-4 px-2"
-          onChange={handleCoverChange}
-        >
-          <option value="none">None</option>
-          <option value="light">Light</option>
-          <option value="heavy">Heavy</option>
-        </select>
         <span className="mx-2 my-auto drop-down-label">Courage:</span>
         <select
           value={props.input.courage}
@@ -65,6 +55,31 @@ function Defense(props: DefenseProps): React.JSX.Element {
           <option value={2}>2</option>
           <option value={3}>3</option>
         </select>
+      </div>
+      <div className="d-flex justify-content-center align-items-center my-2">
+        <span className="mx-2 my-auto drop-down-label">Cover:</span>
+        <select
+          value={props.input.cover}
+          className="rounded-lg mr-4 px-2"
+          onChange={handleCoverChange}
+        >
+          <option value="none">None</option>
+          <option value="light">Light</option>
+          <option value="heavy">Heavy</option>
+        </select>
+        <SurgeDieSelector
+          color={props.input.redCoverDice ? T.DieColor.Red : T.DieColor.White}
+          surge={
+            props.input.cover === T.Cover.Heavy ||
+            (props.input.cover === T.Cover.Light &&
+              props.input.tokens.suppression >= props.input.courage)
+          }
+          onClick={() =>
+            props.eventHandlers.handleRedCoverDiceChange(
+              !props.input.redCoverDice
+            )
+          }
+        ></SurgeDieSelector>
       </div>
       <DefenseAbilities
         showSimpleView={props.showSimpleView}

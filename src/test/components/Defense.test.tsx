@@ -52,8 +52,9 @@ describe("Defense", () => {
         eventHandlers={events}
       ></Defense>
     );
-    const select = container.querySelector("select") as HTMLSelectElement;
-    fireEvent.change(select, { target: { value: "heavy" } });
+    const selects = container.querySelectorAll("select");
+    const coverSelect = selects[1] as HTMLSelectElement;
+    fireEvent.change(coverSelect, { target: { value: "heavy" } });
 
     expect(events.handleCoverChange).toHaveBeenCalledTimes(1);
     expect(events.handleCoverChange).toHaveBeenCalledWith("heavy");

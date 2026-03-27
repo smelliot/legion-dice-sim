@@ -102,30 +102,6 @@ exports[`Defense matches the snapshot 1`] = `
       <span
         class="mx-2 my-auto drop-down-label"
       >
-        Cover:
-      </span>
-      <select
-        class="rounded-lg mr-4 px-2"
-      >
-        <option
-          value="none"
-        >
-          None
-        </option>
-        <option
-          value="light"
-        >
-          Light
-        </option>
-        <option
-          value="heavy"
-        >
-          Heavy
-        </option>
-      </select>
-      <span
-        class="mx-2 my-auto drop-down-label"
-      >
         Courage:
       </span>
       <select
@@ -147,6 +123,37 @@ exports[`Defense matches the snapshot 1`] = `
           3
         </option>
       </select>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center my-2"
+    >
+      <span
+        class="mx-2 my-auto drop-down-label"
+      >
+        Cover:
+      </span>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="none"
+        >
+          None
+        </option>
+        <option
+          value="light"
+        >
+          Light
+        </option>
+        <option
+          value="heavy"
+        >
+          Heavy
+        </option>
+      </select>
+      <button
+        class="btn border btn-light border-secondary rounded-lg selection-die mx-1 "
+      />
     </div>
     <div>
       <div
@@ -385,21 +392,6 @@ exports[`Defense matches the snapshot 1`] = `
           for="lowProfileToggle"
         >
           Low Profile
-        </label>
-      </div>
-      <div
-        class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
-      >
-        <input
-          class="custom-control-input my-auto"
-          id="redCoverDiceToggle"
-          type="checkbox"
-        />
-        <label
-          class="custom-control-label drop-down-label mx-2 my-auto"
-          for="redCoverDiceToggle"
-        >
-          Red Cover Dice
         </label>
       </div>
       <div
@@ -573,30 +565,6 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
       <span
         class="mx-2 my-auto drop-down-label"
       >
-        Cover:
-      </span>
-      <select
-        class="rounded-lg mr-4 px-2"
-      >
-        <option
-          value="none"
-        >
-          None
-        </option>
-        <option
-          value="light"
-        >
-          Light
-        </option>
-        <option
-          value="heavy"
-        >
-          Heavy
-        </option>
-      </select>
-      <span
-        class="mx-2 my-auto drop-down-label"
-      >
         Courage:
       </span>
       <select
@@ -618,6 +586,37 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
           3
         </option>
       </select>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center my-2"
+    >
+      <span
+        class="mx-2 my-auto drop-down-label"
+      >
+        Cover:
+      </span>
+      <select
+        class="rounded-lg mr-4 px-2"
+      >
+        <option
+          value="none"
+        >
+          None
+        </option>
+        <option
+          value="light"
+        >
+          Light
+        </option>
+        <option
+          value="heavy"
+        >
+          Heavy
+        </option>
+      </select>
+      <button
+        class="btn border btn-light border-secondary rounded-lg selection-die mx-1 "
+      />
     </div>
     <div>
       <div
@@ -856,21 +855,6 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
           for="lowProfileToggle"
         >
           Low Profile
-        </label>
-      </div>
-      <div
-        class="collapse justify-content-center my-3 custom-control custom-switch"
-      >
-        <input
-          class="custom-control-input my-auto"
-          id="redCoverDiceToggle"
-          type="checkbox"
-        />
-        <label
-          class="custom-control-label drop-down-label mx-2 my-auto"
-          for="redCoverDiceToggle"
-        >
-          Red Cover Dice
         </label>
       </div>
       <div
