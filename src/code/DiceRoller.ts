@@ -652,18 +652,6 @@ export class DiceRoller {
     modifiedInput: T.AttackInput,
     status: DRT.AttackResultStatus
   ) {
-    // guardian
-    if (
-      modifiedInput.combat.guardian.active &&
-      !modifiedInput.combat.meleeAttack
-    ) {
-      status.modificationMatrix.tryConvertResultCount(
-        T.AttackDieResult.Hit,
-        T.AttackDieResult.Miss,
-        modifiedInput.combat.guardian.value
-      );
-    }
-
     // impact X
     if (modifiedInput.defense.armor || modifiedInput.defense.armorX.active) {
       if (modifiedInput.offense.impactX.active) {
@@ -690,6 +678,19 @@ export class DiceRoller {
       );
     }
 
+    // lethal
+    if (modifiedInput.offense.lethalX.active) {
+      if (modifiedInput.offense.tokens.aim > 0) {
+        const effectiveLethal = Math.min(
+          modifiedInput.offense.lethalX.value,
+          modifiedInput.offense.tokens.aim
+        );
+        modifiedInput.offense.tokens.aim -= effectiveLethal;
+        modifiedInput.offense.pierceX.active = true;
+        modifiedInput.offense.pierceX.value += effectiveLethal;
+      }
+    }
+
     // armor
     if (modifiedInput.defense.armor) {
       status.modificationMatrix.tryConvertResultAllExcept(
@@ -708,17 +709,16 @@ export class DiceRoller {
       );
     }
 
-    // lethal
-    if (modifiedInput.offense.lethalX.active) {
-      if (modifiedInput.offense.tokens.aim > 0) {
-        const effectiveLethal = Math.min(
-          modifiedInput.offense.lethalX.value,
-          modifiedInput.offense.tokens.aim
-        );
-        modifiedInput.offense.tokens.aim -= effectiveLethal;
-        modifiedInput.offense.pierceX.active = true;
-        modifiedInput.offense.pierceX.value += effectiveLethal;
-      }
+    // guardian
+    if (
+      modifiedInput.combat.guardian.active &&
+      !modifiedInput.combat.meleeAttack
+    ) {
+      status.modificationMatrix.tryConvertResultCount(
+        T.AttackDieResult.Hit,
+        T.AttackDieResult.Miss,
+        modifiedInput.combat.guardian.value
+      );
     }
   }
 
