@@ -45,6 +45,8 @@ export function createMockAppStateDefenseEventHandlers(): AS.AppStateDefenseEven
     incrementSuppressionTokenCount: jest.fn(),
     incrementSurgeTokenCount: jest.fn(),
     handleCoverChange: jest.fn(),
+    handleCourageChange: jest.fn(),
+    handleRedCoverDiceChange: jest.fn(),
     handleArmorChange: jest.fn(),
     handleArmorXChange: jest.fn(),
     handleArmorXValueChange: jest.fn(),

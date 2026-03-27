@@ -150,6 +150,45 @@ exports[`DiceResults matches the snapshot when not visible 1`] = `
           </span>
         </div>
       </div>
+      <div
+        class="col-md-3 my-3"
+      >
+        <h3
+          class="stats-header"
+        >
+          Cover Saves
+        </h3>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Median: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Mean: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Standard Deviation: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -305,6 +344,45 @@ exports[`DiceResults matches the snapshot when showing graph result 1`] = `
           </span>
         </div>
       </div>
+      <div
+        class="col-md-3 my-3"
+      >
+        <h3
+          class="stats-header"
+        >
+          Cover Saves
+        </h3>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Median: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Mean: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Standard Deviation: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -428,6 +506,45 @@ exports[`DiceResults matches the snapshot when showing single result 1`] = `
           class="stats-header"
         >
           Required Saves
+        </h3>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Median: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Mean: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+        <div>
+          <span
+            class="stats-label"
+          >
+            Standard Deviation: 
+          </span>
+          <span>
+            0
+          </span>
+        </div>
+      </div>
+      <div
+        class="col-md-3 my-3"
+      >
+        <h3
+          class="stats-header"
+        >
+          Cover Saves
         </h3>
         <div>
           <span

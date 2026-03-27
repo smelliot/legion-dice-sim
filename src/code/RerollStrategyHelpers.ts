@@ -57,7 +57,7 @@ export function getMarksmanConversions(
 
   const totalDice =
     input.offense.redDice + input.offense.blackDice + input.offense.whiteDice;
-  const cover = EC.getCoverModification(input, EC.getEffectiveCover(input));
+  const cover = EC.getGuaranteedCoverSaves(input);
   const maxCancelledHits =
     cover + (input.combat.guardian.active ? input.combat.guardian.value : 0);
 

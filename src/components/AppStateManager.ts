@@ -55,6 +55,8 @@ export type AppStateDefenseEventHandlers = {
   incrementSuppressionTokenCount: () => void;
   incrementSurgeTokenCount: () => void;
   handleCoverChange: (cover: T.Cover) => void;
+  handleCourageChange: (value: number) => void;
+  handleRedCoverDiceChange: (active: boolean) => void;
   handleArmorChange: (active: boolean) => void;
   handleArmorXChange: (active: boolean) => void;
   handleArmorXValueChange: (value: number) => void;
@@ -142,6 +144,7 @@ export class AppStateManager {
           },
           defense: {
             forcedSaves: 0,
+            coverSaves: 0,
             blocks: 0,
             surges: 0,
             blanks: 0,
@@ -155,6 +158,12 @@ export class AppStateManager {
           attackSurge: [],
           forcedSaves: [],
           forcedSaveStats: {
+            mean: 0,
+            median: 0,
+            stddev: 0,
+          },
+          coverSaves: [],
+          coverSaveStats: {
             mean: 0,
             median: 0,
             stddev: 0,
@@ -247,6 +256,7 @@ export class AppStateManager {
           },
           defense: {
             forcedSaves: this.state.outputs.firstAttack.defense.forcedSaves,
+            coverSaves: this.state.outputs.firstAttack.defense.coverSaves,
             blocks: this.state.outputs.firstAttack.defense.blocks,
             surges: this.state.outputs.firstAttack.defense.surges,
             blanks: this.state.outputs.firstAttack.defense.blanks,
@@ -263,6 +273,12 @@ export class AppStateManager {
             mean: this.state.outputs.summary.forcedSaveStats.mean,
             median: this.state.outputs.summary.forcedSaveStats.median,
             stddev: this.state.outputs.summary.forcedSaveStats.stddev,
+          },
+          coverSaves: this.cloneArray(this.state.outputs.summary.coverSaves),
+          coverSaveStats: {
+            mean: this.state.outputs.summary.coverSaveStats.mean,
+            median: this.state.outputs.summary.coverSaveStats.median,
+            stddev: this.state.outputs.summary.coverSaveStats.stddev,
           },
           blocks: this.cloneArray(this.state.outputs.summary.blocks),
           defenseSurge: this.cloneArray(
@@ -535,6 +551,9 @@ export class AppStateManager {
         this.incrementSuppressionTokenCount(),
       incrementSurgeTokenCount: () => this.incrementDefenseSurgeTokenCount(),
       handleCoverChange: (cover: T.Cover) => this.handleCoverChange(cover),
+      handleCourageChange: (value: number) => this.handleCourageChange(value),
+      handleRedCoverDiceChange: (active: boolean) =>
+        this.handleRedCoverDiceChange(active),
       handleArmorChange: (active: boolean) => this.handleArmorChange(active),
       handleArmorXChange: (active: boolean) => this.handleArmorXChange(active),
       handleArmorXValueChange: (value: number) =>
@@ -630,6 +649,18 @@ export class AppStateManager {
   private handleCoverChange(cover: T.Cover) {
     const newState = this.cloneState();
     newState.inputs.defense.cover = cover;
+    this.setState(newState);
+  }
+
+  private handleCourageChange(courage: number) {
+    const newState = this.cloneState();
+    newState.inputs.defense.courage = courage;
+    this.setState(newState);
+  }
+
+  private handleRedCoverDiceChange(hasRedCoverDice: boolean) {
+    const newState = this.cloneState();
+    newState.inputs.defense.redCoverDice = hasRedCoverDice;
     this.setState(newState);
   }
 

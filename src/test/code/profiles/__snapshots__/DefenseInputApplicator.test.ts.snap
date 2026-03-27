@@ -8,6 +8,7 @@ exports[`DefenseInputApplicator adds value from upgrade: Han Solo + uncanny luck
     "value": 1,
   },
   "block": false,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -24,6 +25,7 @@ exports[`DefenseInputApplicator adds value from upgrade: Han Solo + uncanny luck
   "impervious": false,
   "lowProfile": true,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -48,6 +50,7 @@ exports[`DefenseInputApplicator applies a commander unit: Emperor Palpatine 1`] 
     "value": 1,
   },
   "block": false,
+  "courage": 4,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -64,6 +67,7 @@ exports[`DefenseInputApplicator applies a commander unit: Emperor Palpatine 1`] 
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -88,6 +92,7 @@ exports[`DefenseInputApplicator applies a heavy unit: X-34 Landspeeder 1`] = `
     "value": 2,
   },
   "block": false,
+  "courage": 1,
   "cover": "light",
   "dangerSenseX": {
     "active": false,
@@ -104,6 +109,7 @@ exports[`DefenseInputApplicator applies a heavy unit: X-34 Landspeeder 1`] = `
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -128,6 +134,7 @@ exports[`DefenseInputApplicator applies a special forces unit: ARC Troopers 1`] 
     "value": 1,
   },
   "block": false,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -144,6 +151,7 @@ exports[`DefenseInputApplicator applies a special forces unit: ARC Troopers 1`] 
   "impervious": true,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {
@@ -168,6 +176,7 @@ exports[`DefenseInputApplicator applies a support unit: Droidekas 1`] = `
     "value": 1,
   },
   "block": false,
+  "courage": 1,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -184,6 +193,7 @@ exports[`DefenseInputApplicator applies a support unit: Droidekas 1`] = `
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -208,6 +218,7 @@ exports[`DefenseInputApplicator applies a trooper unit: Rebel Troopers 1`] = `
     "value": 1,
   },
   "block": false,
+  "courage": 1,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -224,6 +235,7 @@ exports[`DefenseInputApplicator applies a trooper unit: Rebel Troopers 1`] = `
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -248,6 +260,7 @@ exports[`DefenseInputApplicator applies an operative unit: Cad Bane 1`] = `
     "value": 1,
   },
   "block": false,
+  "courage": 3,
   "cover": "none",
   "dangerSenseX": {
     "active": true,
@@ -264,6 +277,7 @@ exports[`DefenseInputApplicator applies an operative unit: Cad Bane 1`] = `
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -288,6 +302,7 @@ exports[`DefenseInputApplicator applies armor X upgrade: Wookie Warriors + Battl
     "value": 1,
   },
   "block": false,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -304,6 +319,7 @@ exports[`DefenseInputApplicator applies armor X upgrade: Wookie Warriors + Battl
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {
@@ -328,6 +344,7 @@ exports[`DefenseInputApplicator applies armor upgrade: 74-Z Speeder Bikes + armo
     "value": 1,
   },
   "block": false,
+  "courage": 1,
   "cover": "light",
   "dangerSenseX": {
     "active": false,
@@ -344,6 +361,7 @@ exports[`DefenseInputApplicator applies armor upgrade: 74-Z Speeder Bikes + armo
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -368,6 +386,7 @@ exports[`DefenseInputApplicator applies block upgrade: Wookie Warriors + block u
     "value": 1,
   },
   "block": true,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -384,6 +403,7 @@ exports[`DefenseInputApplicator applies block upgrade: Wookie Warriors + block u
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {
@@ -408,6 +428,7 @@ exports[`DefenseInputApplicator applies cover upgrade (heavy upgrade): T-47 Airs
     "value": 1,
   },
   "block": false,
+  "courage": 1,
   "cover": "heavy",
   "dangerSenseX": {
     "active": false,
@@ -424,6 +445,7 @@ exports[`DefenseInputApplicator applies cover upgrade (heavy upgrade): T-47 Airs
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {
@@ -448,6 +470,7 @@ exports[`DefenseInputApplicator applies cover upgrade (light to heavy): T-47 Air
     "value": 1,
   },
   "block": false,
+  "courage": 1,
   "cover": "heavy",
   "dangerSenseX": {
     "active": false,
@@ -464,6 +487,7 @@ exports[`DefenseInputApplicator applies cover upgrade (light to heavy): T-47 Air
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {
@@ -488,6 +512,7 @@ exports[`DefenseInputApplicator applies cover upgrade (none to light): A-A5 Spee
     "value": 1,
   },
   "block": false,
+  "courage": 1,
   "cover": "light",
   "dangerSenseX": {
     "active": false,
@@ -504,6 +529,7 @@ exports[`DefenseInputApplicator applies cover upgrade (none to light): A-A5 Spee
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -528,6 +554,7 @@ exports[`DefenseInputApplicator applies deflect upgrade: General Grievous + defl
     "value": 1,
   },
   "block": true,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -544,6 +571,7 @@ exports[`DefenseInputApplicator applies deflect upgrade: General Grievous + defl
   "impervious": true,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {
@@ -568,6 +596,7 @@ exports[`DefenseInputApplicator applies djem so mastery upgrade: General Grievou
     "value": 1,
   },
   "block": true,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -584,6 +613,7 @@ exports[`DefenseInputApplicator applies djem so mastery upgrade: General Grievou
   "impervious": true,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {
@@ -608,6 +638,7 @@ exports[`DefenseInputApplicator applies duelist upgrade: Mandalorian Resistance 
     "value": 1,
   },
   "block": false,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -624,6 +655,7 @@ exports[`DefenseInputApplicator applies duelist upgrade: Mandalorian Resistance 
   "impervious": true,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -648,6 +680,7 @@ exports[`DefenseInputApplicator applies immune: blast upgrade: Phase I Clone Tro
     "value": 1,
   },
   "block": false,
+  "courage": 1,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -664,6 +697,7 @@ exports[`DefenseInputApplicator applies immune: blast upgrade: Phase I Clone Tro
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {
@@ -688,6 +722,7 @@ exports[`DefenseInputApplicator applies immune: pierce upgrade: Han Solo + immun
     "value": 1,
   },
   "block": false,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -704,6 +739,7 @@ exports[`DefenseInputApplicator applies immune: pierce upgrade: Han Solo + immun
   "impervious": false,
   "lowProfile": true,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -728,6 +764,7 @@ exports[`DefenseInputApplicator applies impervious upgrade: Padmé Amidala + imp
     "value": 1,
   },
   "block": false,
+  "courage": 3,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -744,6 +781,7 @@ exports[`DefenseInputApplicator applies impervious upgrade: Padmé Amidala + imp
   "impervious": true,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -768,6 +806,7 @@ exports[`DefenseInputApplicator applies low profile upgrade: Agent Kallus + low 
     "value": 1,
   },
   "block": false,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -784,6 +823,7 @@ exports[`DefenseInputApplicator applies low profile upgrade: Agent Kallus + low 
   "impervious": false,
   "lowProfile": true,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {
@@ -808,6 +848,7 @@ exports[`DefenseInputApplicator applies outmaneuver upgrade: Phase II Clone Troo
     "value": 1,
   },
   "block": false,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -824,6 +865,7 @@ exports[`DefenseInputApplicator applies outmaneuver upgrade: Phase II Clone Troo
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": true,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {
@@ -848,6 +890,7 @@ exports[`DefenseInputApplicator applies shielded upgrade: Sabine Wren + Personal
     "value": 1,
   },
   "block": false,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -864,6 +907,7 @@ exports[`DefenseInputApplicator applies shielded upgrade: Sabine Wren + Personal
   "impervious": true,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -888,6 +932,7 @@ exports[`DefenseInputApplicator applies soresu mastery upgrade: General Grievous
     "value": 1,
   },
   "block": true,
+  "courage": 2,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -904,6 +949,7 @@ exports[`DefenseInputApplicator applies soresu mastery upgrade: General Grievous
   "impervious": true,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": true,
   "surge": false,
   "tokens": {
@@ -928,6 +974,7 @@ exports[`DefenseInputApplicator handles cover upgrade (heavy + upgrade): cover u
     "value": 1,
   },
   "block": false,
+  "courage": 1,
   "cover": "heavy",
   "dangerSenseX": {
     "active": false,
@@ -944,6 +991,7 @@ exports[`DefenseInputApplicator handles cover upgrade (heavy + upgrade): cover u
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {
@@ -968,6 +1016,7 @@ exports[`DefenseInputApplicator handles no keywords on profile: unit with no key
     "value": 1,
   },
   "block": false,
+  "courage": 1,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -984,6 +1033,7 @@ exports[`DefenseInputApplicator handles no keywords on profile: unit with no key
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": true,
   "tokens": {
@@ -1008,6 +1058,7 @@ exports[`DefenseInputApplicator handles no upgrade slots on profile: unit with n
     "value": 1,
   },
   "block": false,
+  "courage": 1,
   "cover": "none",
   "dangerSenseX": {
     "active": false,
@@ -1024,6 +1075,7 @@ exports[`DefenseInputApplicator handles no upgrade slots on profile: unit with n
   "impervious": false,
   "lowProfile": false,
   "outmaneuver": false,
+  "redCoverDice": false,
   "soresuMastery": false,
   "surge": false,
   "tokens": {

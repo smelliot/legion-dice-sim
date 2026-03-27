@@ -113,6 +113,13 @@ function DefenseAbilities(props: DefenseAbilitiesProps): React.JSX.Element {
         onActiveChanged={props.eventHandlers.handleLowProfileChange}
       ></AbilityToggle>
       <AbilityToggle
+        id="redCoverDiceToggle"
+        label="Red Cover Dice"
+        visible={!props.showSimpleView}
+        active={props.inputs.redCoverDice}
+        onActiveChanged={props.eventHandlers.handleRedCoverDiceChange}
+      ></AbilityToggle>
+      <AbilityToggle
         id="outmaneuverToggle"
         label="Outmaneuver"
         visible={true}

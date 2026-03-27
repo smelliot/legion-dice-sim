@@ -81,7 +81,7 @@ describe("ArmorXRerollStrategy", () => {
 
     expect(
       strategy.pickRerollDice(input, rolls, 2, RerollReason.AimToken, remaining)
-    ).toStrictEqual([0, 2]);
+    ).toStrictEqual(undefined);
   });
 
   it("handles armor X, cover + armor X >= possible hits", () => {
@@ -102,7 +102,7 @@ describe("ArmorXRerollStrategy", () => {
 
     expect(
       strategy.pickRerollDice(input, rolls, 2, RerollReason.AimToken, remaining)
-    ).toStrictEqual([0, 2]);
+    ).toStrictEqual(undefined);
   });
 
   it("handles armor X, cover + armor X < possible hits", () => {
@@ -176,7 +176,7 @@ describe("ArmorXRerollStrategy", () => {
 
     expect(
       strategy.pickRerollDice(input, rolls, 2, RerollReason.AimToken, remaining)
-    ).toStrictEqual(undefined);
+    ).toStrictEqual([0]);
   });
 
   it("handles armor X, possible hits < cover + impact X + armorX but > cover + impact X", () => {
@@ -201,7 +201,7 @@ describe("ArmorXRerollStrategy", () => {
 
     expect(
       strategy.pickRerollDice(input, rolls, 2, RerollReason.AimToken, remaining)
-    ).toStrictEqual([0]);
+    ).toStrictEqual(undefined);
   });
 
   it("handles armor X, prefers lethal when all can be converted, no pierce", () => {

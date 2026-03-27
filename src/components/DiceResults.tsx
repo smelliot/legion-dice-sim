@@ -26,6 +26,8 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
   private attackSurgeColor = "rgba(11, 60, 93, 0.8)";
   private forcedSavesColor = "rgba(14, 19, 21, 0.8)";
   private forcedSavesFillColor = "rgba(14, 19, 21, 0.4)";
+  private coverSavesColor = "rgba(34, 139, 34, 0.8)";
+  private coverSavesFillColor = "rgba(34, 139, 34, 0.4)";
   private blocksColor = "rgba(216, 108, 35, 0.8)";
   private defenseSurgeColor = "rgba(255, 225, 0, 0.8)";
   private woundsColor = "rgba(192, 45, 45, 0.8)";
@@ -73,11 +75,13 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
       this.props.results.summary.hit,
       this.props.results.summary.attackSurge,
       this.props.results.summary.forcedSaves,
+      this.props.results.summary.coverSaves,
       this.props.results.summary.blocks,
       this.props.results.summary.defenseSurge,
       this.props.results.summary.wounds,
     ];
     const forcedSaveStats = this.props.results.summary.forcedSaveStats;
+    const coverSaveStats = this.props.results.summary.coverSaveStats;
     const woundStats = this.props.results.summary.woundStats;
     return {
       chart: {
@@ -127,18 +131,27 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
           data: chartData[3],
         },
         {
+          type: "areaspline",
+          name: "Cover Saves",
+          color: this.coverSavesColor,
+          fillColor: this.coverSavesFillColor,
+          zoneAxis: "x",
+          zones: this.getZones(coverSaveStats.mean, coverSaveStats.stddev),
+          data: chartData[4],
+        },
+        {
           type: "spline",
           name: "Blocks",
           color: this.blocksColor,
           visible: false,
-          data: chartData[4],
+          data: chartData[5],
         },
         {
           type: "spline",
           name: "Defense Surges",
           color: this.defenseSurgeColor,
           visible: false,
-          data: chartData[5],
+          data: chartData[6],
         },
         {
           type: "areaspline",
@@ -147,7 +160,7 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
           fillColor: this.woundsFillColor,
           zoneAxis: "x",
           zones: this.getZones(woundStats.mean, woundStats.stddev),
-          data: chartData[6],
+          data: chartData[7],
         },
       ],
       plotOptions: {
@@ -461,6 +474,21 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
             <div>
               <span className="stats-label">Standard Deviation: </span>
               <span>{this.props.results.summary.forcedSaveStats.stddev}</span>
+            </div>
+          </div>
+          <div className="col-md-3 my-3">
+            <h3 className="stats-header">Cover Saves</h3>
+            <div>
+              <span className="stats-label">Median: </span>
+              <span>{this.props.results.summary.coverSaveStats.median}</span>
+            </div>
+            <div>
+              <span className="stats-label">Mean: </span>
+              <span>{this.props.results.summary.coverSaveStats.mean}</span>
+            </div>
+            <div>
+              <span className="stats-label">Standard Deviation: </span>
+              <span>{this.props.results.summary.coverSaveStats.stddev}</span>
             </div>
           </div>
         </div>

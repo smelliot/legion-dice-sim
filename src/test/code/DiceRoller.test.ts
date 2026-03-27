@@ -193,7 +193,7 @@ describe("DiceRoller", () => {
     expect(result.firstAttack.defense.forcedSaves).toEqual(3);
   });
 
-  test("Validate light cover", () => {
+  test("Validate light cover with blank cover dice", () => {
     diceRoller.rollAttackDie = (color) => {
       return T.AttackDieResult.Hit;
     };
@@ -207,10 +207,46 @@ describe("DiceRoller", () => {
     const result = diceRoller.simulateAttacks(1, atkInput);
 
     expect(result.firstAttack.attack.hits).toEqual(2);
-    expect(result.firstAttack.defense.forcedSaves).toEqual(1);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(2);
+    expect(result.firstAttack.defense.coverSaves).toEqual(0);
   });
 
-  test("Validate heavy cover", () => {
+  test("Validate light cover with block cover dice", () => {
+    diceRoller.rollAttackDie = (color) => {
+      return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Block;
+    };
+
+    const atkInput = T.createDefaultAttackInput();
+    atkInput.offense.redDice = 3;
+    atkInput.defense.cover = T.Cover.Light;
+    const result = diceRoller.simulateAttacks(1, atkInput);
+
+    expect(result.firstAttack.attack.hits).toEqual(3);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(0);
+    expect(result.firstAttack.defense.coverSaves).toEqual(3);
+  });
+
+  test("Validate light cover surge does not cancel", () => {
+    diceRoller.rollAttackDie = (color) => {
+      return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Surge;
+    };
+
+    const atkInput = T.createDefaultAttackInput();
+    atkInput.offense.redDice = 2;
+    atkInput.defense.cover = T.Cover.Light;
+    const result = diceRoller.simulateAttacks(1, atkInput);
+
+    expect(result.firstAttack.defense.forcedSaves).toEqual(2);
+    expect(result.firstAttack.defense.coverSaves).toEqual(0);
+  });
+
+  test("Validate heavy cover with blank cover dice", () => {
     diceRoller.rollAttackDie = (color) => {
       return T.AttackDieResult.Hit;
     };
@@ -224,7 +260,43 @@ describe("DiceRoller", () => {
     const result = diceRoller.simulateAttacks(1, atkInput);
 
     expect(result.firstAttack.attack.hits).toEqual(2);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(2);
+    expect(result.firstAttack.defense.coverSaves).toEqual(0);
+  });
+
+  test("Validate heavy cover with block cover dice", () => {
+    diceRoller.rollAttackDie = (color) => {
+      return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Block;
+    };
+
+    const atkInput = T.createDefaultAttackInput();
+    atkInput.offense.redDice = 2;
+    atkInput.defense.cover = T.Cover.Heavy;
+    const result = diceRoller.simulateAttacks(1, atkInput);
+
+    expect(result.firstAttack.attack.hits).toEqual(2);
     expect(result.firstAttack.defense.forcedSaves).toEqual(0);
+    expect(result.firstAttack.defense.coverSaves).toEqual(2);
+  });
+
+  test("Validate heavy cover surge cancels", () => {
+    diceRoller.rollAttackDie = (color) => {
+      return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Surge;
+    };
+
+    const atkInput = T.createDefaultAttackInput();
+    atkInput.offense.redDice = 2;
+    atkInput.defense.cover = T.Cover.Heavy;
+    const result = diceRoller.simulateAttacks(1, atkInput);
+
+    expect(result.firstAttack.defense.forcedSaves).toEqual(0);
+    expect(result.firstAttack.defense.coverSaves).toEqual(2);
   });
 
   test("Validate critical over cover", () => {
@@ -426,10 +498,14 @@ describe("DiceRoller", () => {
 
     expect(result.firstAttack.attack.hits).toEqual(4);
     expect(result.firstAttack.defense.forcedSaves).toEqual(4);
+    expect(result.firstAttack.defense.coverSaves).toEqual(0);
   });
   test("Validate sharpshooter 1 on heavy", () => {
     diceRoller.rollAttackDie = (color) => {
       return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Block;
     };
 
     const atkInput = T.createDefaultAttackInput();
@@ -440,7 +516,8 @@ describe("DiceRoller", () => {
     const result = diceRoller.simulateAttacks(1, atkInput);
 
     expect(result.firstAttack.attack.hits).toEqual(3);
-    expect(result.firstAttack.defense.forcedSaves).toEqual(2);
+    expect(result.firstAttack.defense.coverSaves).toEqual(3);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(0);
   });
 
   test("Validate sharpshooter 2 on heavy", () => {
@@ -457,6 +534,7 @@ describe("DiceRoller", () => {
 
     expect(result.firstAttack.attack.hits).toEqual(5);
     expect(result.firstAttack.defense.forcedSaves).toEqual(5);
+    expect(result.firstAttack.defense.coverSaves).toEqual(0);
   });
 
   test("Validate low profile no cover", () => {
@@ -472,11 +550,15 @@ describe("DiceRoller", () => {
 
     expect(result.firstAttack.attack.hits).toEqual(4);
     expect(result.firstAttack.defense.forcedSaves).toEqual(4);
+    expect(result.firstAttack.defense.coverSaves).toEqual(0);
   });
 
-  test("Validate low profile light cover", () => {
+  test("Validate low profile light cover blank dice", () => {
     diceRoller.rollAttackDie = (color) => {
       return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Blank;
     };
 
     const atkInput = T.createDefaultAttackInput();
@@ -486,12 +568,35 @@ describe("DiceRoller", () => {
     const result = diceRoller.simulateAttacks(1, atkInput);
 
     expect(result.firstAttack.attack.hits).toEqual(4);
-    expect(result.firstAttack.defense.forcedSaves).toEqual(2);
+    expect(result.firstAttack.defense.coverSaves).toEqual(1);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(3);
   });
 
-  test("Validate low profile heavy cover", () => {
+  test("Validate low profile light cover block dice", () => {
     diceRoller.rollAttackDie = (color) => {
       return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Block;
+    };
+
+    const atkInput = T.createDefaultAttackInput();
+    atkInput.offense.redDice = 4;
+    atkInput.defense.cover = T.Cover.Light;
+    atkInput.defense.lowProfile = true;
+    const result = diceRoller.simulateAttacks(1, atkInput);
+
+    expect(result.firstAttack.attack.hits).toEqual(4);
+    expect(result.firstAttack.defense.coverSaves).toEqual(4);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(0);
+  });
+
+  test("Validate low profile heavy cover blank dice", () => {
+    diceRoller.rollAttackDie = (color) => {
+      return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Blank;
     };
 
     const atkInput = T.createDefaultAttackInput();
@@ -501,7 +606,8 @@ describe("DiceRoller", () => {
     const result = diceRoller.simulateAttacks(1, atkInput);
 
     expect(result.firstAttack.attack.hits).toEqual(4);
-    expect(result.firstAttack.defense.forcedSaves).toEqual(1);
+    expect(result.firstAttack.defense.coverSaves).toEqual(1);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(3);
   });
 
   test("Validate uncanny luck", () => {
@@ -532,46 +638,82 @@ describe("DiceRoller", () => {
     expect(result.firstAttack.defense.surges).toEqual(3);
   });
 
-  test("Validate suppression on no cover", () => {
+  test("Validate suppression on no cover (suppression >= courage)", () => {
     diceRoller.rollAttackDie = (color) => {
       return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Block;
     };
 
     const atkInput = T.createDefaultAttackInput();
     atkInput.offense.redDice = 2;
     atkInput.defense.tokens.suppression = 1;
+    atkInput.defense.courage = 1;
     atkInput.defense.cover = T.Cover.None;
     const result = diceRoller.simulateAttacks(1, atkInput);
 
-    expect(result.firstAttack.defense.forcedSaves).toEqual(1);
+    expect(result.firstAttack.defense.coverSaves).toEqual(2);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(0);
   });
 
-  test("Validate suppression on light cover", () => {
+  test("Validate suppression below courage does not grant cover", () => {
     diceRoller.rollAttackDie = (color) => {
       return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Block;
+    };
+
+    const atkInput = T.createDefaultAttackInput();
+    atkInput.offense.redDice = 2;
+    atkInput.defense.tokens.suppression = 1;
+    atkInput.defense.courage = 2;
+    atkInput.defense.cover = T.Cover.None;
+    const result = diceRoller.simulateAttacks(1, atkInput);
+
+    expect(result.firstAttack.defense.coverSaves).toEqual(0);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(2);
+  });
+
+  test("Validate suppression on light cover (suppression >= courage)", () => {
+    diceRoller.rollAttackDie = (color) => {
+      return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Block;
     };
 
     const atkInput = T.createDefaultAttackInput();
     atkInput.offense.redDice = 4;
     atkInput.defense.tokens.suppression = 3;
+    atkInput.defense.courage = 1;
     atkInput.defense.cover = T.Cover.Light;
     const result = diceRoller.simulateAttacks(1, atkInput);
 
-    expect(result.firstAttack.defense.forcedSaves).toEqual(2);
+    // suppression upgrades light to heavy, block cancels all on heavy
+    expect(result.firstAttack.defense.coverSaves).toEqual(4);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(0);
   });
 
-  test("Validate suppression on heavy cover", () => {
+  test("Validate suppression on heavy cover (suppression >= courage)", () => {
     diceRoller.rollAttackDie = (color) => {
       return T.AttackDieResult.Hit;
+    };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Block;
     };
 
     const atkInput = T.createDefaultAttackInput();
     atkInput.offense.redDice = 3;
     atkInput.defense.tokens.suppression = 2;
+    atkInput.defense.courage = 1;
     atkInput.defense.cover = T.Cover.Heavy;
     const result = diceRoller.simulateAttacks(1, atkInput);
 
-    expect(result.firstAttack.defense.forcedSaves).toEqual(1);
+    // already heavy, suppression doesn't upgrade further, block cancels all
+    expect(result.firstAttack.defense.coverSaves).toEqual(3);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(0);
   });
 
   test("Validate danger sense with no suppression", () => {
@@ -611,10 +753,11 @@ describe("DiceRoller", () => {
     atkInput.defense.dangerSenseX.active = true;
     atkInput.defense.dangerSenseX.value = 4;
     atkInput.defense.tokens.suppression = 2;
+    atkInput.defense.courage = 3;
     const result = diceRoller.simulateAttacks(1, atkInput);
 
-    expect(result.firstAttack.defense.forcedSaves).toEqual(4);
-    expect(defcount).toEqual(6);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(5);
+    expect(defcount).toEqual(7);
   });
 
   test("Validate danger sense with more suppression", () => {
@@ -633,10 +776,11 @@ describe("DiceRoller", () => {
     atkInput.defense.dangerSenseX.active = true;
     atkInput.defense.dangerSenseX.value = 3;
     atkInput.defense.tokens.suppression = 5;
+    atkInput.defense.courage = 6;
     const result = diceRoller.simulateAttacks(1, atkInput);
 
-    expect(result.firstAttack.defense.forcedSaves).toEqual(1);
-    expect(defcount).toEqual(4);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(2);
+    expect(defcount).toEqual(5);
   });
 
   test("Validate convert no defensive surge tokens", () => {
@@ -1203,6 +1347,9 @@ describe("DiceRoller", () => {
     diceRoller.rollAttackDie = (color) => {
       return T.AttackDieResult.Hit;
     };
+    diceRoller.rollDefenseDie = (color) => {
+      return T.DefenseDieResult.Block;
+    };
 
     const atkInput = T.createDefaultAttackInput();
     atkInput.offense.redDice = 3;
@@ -1211,7 +1358,8 @@ describe("DiceRoller", () => {
     atkInput.defense.immuneBlast = true;
     const result = diceRoller.simulateAttacks(1, atkInput);
 
-    expect(result.firstAttack.defense.forcedSaves).toEqual(1);
+    expect(result.firstAttack.defense.coverSaves).toEqual(3);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(0);
   });
 
   test("Validate immune: pierce", () => {
@@ -1297,7 +1445,6 @@ describe("DiceRoller", () => {
     };
 
     const atkInput = T.createDefaultAttackInput();
-    atkInput.defense.cover = T.Cover.Light;
     atkInput.offense.redDice = 4;
     atkInput.offense.lethalX.active = true;
     atkInput.offense.lethalX.value = 1;
@@ -1306,9 +1453,9 @@ describe("DiceRoller", () => {
 
     expect(atkcount).toEqual(6);
     expect(result.firstAttack.attack.hits).toEqual(2);
-    expect(result.firstAttack.defense.forcedSaves).toEqual(1);
-    expect(result.firstAttack.defense.blocks).toEqual(1);
-    expect(result.firstAttack.defense.wounds).toEqual(1);
+    expect(result.firstAttack.defense.forcedSaves).toEqual(2);
+    expect(result.firstAttack.defense.blocks).toEqual(2);
+    expect(result.firstAttack.defense.wounds).toEqual(2);
   });
 
   test("Validate jedi hunter without force user", () => {

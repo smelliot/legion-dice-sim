@@ -14,8 +14,8 @@ class ArmorXRerollStrategy implements RS.RerollStrategy {
     remaining: RS.RemainingRerolls
   ): number[] | undefined {
     const dmm = new DiceModificationMatrix(rolls);
-    const effectiveCover = EC.getEffectiveCover(input);
-    const coverModifier = EC.getCoverModification(input, effectiveCover);
+    const coverModifier = EC.getGuaranteedCoverSaves(input);
+
     // convert surges
     if (input.offense.surge === T.AttackSurgeConversion.Critical) {
       dmm.tryConvertResultCount(

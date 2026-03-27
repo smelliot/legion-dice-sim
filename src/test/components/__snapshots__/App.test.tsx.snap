@@ -1386,6 +1386,30 @@ exports[`App handles simple view 1`] = `
                   Heavy
                 </option>
               </select>
+              <span
+                class="mx-2 my-auto drop-down-label"
+              >
+                Courage:
+              </span>
+              <select
+                class="rounded-lg mr-4 px-2"
+              >
+                <option
+                  value="1"
+                >
+                  1
+                </option>
+                <option
+                  value="2"
+                >
+                  2
+                </option>
+                <option
+                  value="3"
+                >
+                  3
+                </option>
+              </select>
             </div>
             <div>
               <div
@@ -1624,6 +1648,21 @@ exports[`App handles simple view 1`] = `
                   for="lowProfileToggle"
                 >
                   Low Profile
+                </label>
+              </div>
+              <div
+                class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+              >
+                <input
+                  class="custom-control-input my-auto"
+                  id="redCoverDiceToggle"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label drop-down-label mx-2 my-auto"
+                  for="redCoverDiceToggle"
+                >
+                  Red Cover Dice
                 </label>
               </div>
               <div
@@ -1959,6 +1998,45 @@ exports[`App handles simple view 1`] = `
               class="stats-header"
             >
               Required Saves
+            </h3>
+            <div>
+              <span
+                class="stats-label"
+              >
+                Median: 
+              </span>
+              <span>
+                0
+              </span>
+            </div>
+            <div>
+              <span
+                class="stats-label"
+              >
+                Mean: 
+              </span>
+              <span>
+                0
+              </span>
+            </div>
+            <div>
+              <span
+                class="stats-label"
+              >
+                Standard Deviation: 
+              </span>
+              <span>
+                0
+              </span>
+            </div>
+          </div>
+          <div
+            class="col-md-3 my-3"
+          >
+            <h3
+              class="stats-header"
+            >
+              Cover Saves
             </h3>
             <div>
               <span
@@ -3384,6 +3462,30 @@ exports[`App matches the snapshot 1`] = `
                   Heavy
                 </option>
               </select>
+              <span
+                class="mx-2 my-auto drop-down-label"
+              >
+                Courage:
+              </span>
+              <select
+                class="rounded-lg mr-4 px-2"
+              >
+                <option
+                  value="1"
+                >
+                  1
+                </option>
+                <option
+                  value="2"
+                >
+                  2
+                </option>
+                <option
+                  value="3"
+                >
+                  3
+                </option>
+              </select>
             </div>
             <div>
               <div
@@ -3622,6 +3724,21 @@ exports[`App matches the snapshot 1`] = `
                   for="lowProfileToggle"
                 >
                   Low Profile
+                </label>
+              </div>
+              <div
+                class="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+              >
+                <input
+                  class="custom-control-input my-auto"
+                  id="redCoverDiceToggle"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label drop-down-label mx-2 my-auto"
+                  for="redCoverDiceToggle"
+                >
+                  Red Cover Dice
                 </label>
               </div>
               <div
@@ -3957,6 +4074,45 @@ exports[`App matches the snapshot 1`] = `
               class="stats-header"
             >
               Required Saves
+            </h3>
+            <div>
+              <span
+                class="stats-label"
+              >
+                Median: 
+              </span>
+              <span>
+                0
+              </span>
+            </div>
+            <div>
+              <span
+                class="stats-label"
+              >
+                Mean: 
+              </span>
+              <span>
+                0
+              </span>
+            </div>
+            <div>
+              <span
+                class="stats-label"
+              >
+                Standard Deviation: 
+              </span>
+              <span>
+                0
+              </span>
+            </div>
+          </div>
+          <div
+            class="col-md-3 my-3"
+          >
+            <h3
+              class="stats-header"
+            >
+              Cover Saves
             </h3>
             <div>
               <span

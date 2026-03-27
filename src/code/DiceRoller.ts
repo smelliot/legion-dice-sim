@@ -21,6 +21,7 @@ function createDefaultStatus(): DRT.AttackResultStatus {
     modificationMatrix: new DiceModificationMatrix([]),
     defenseResult: {
       forcedSaves: 0,
+      coverSaves: 0,
       blocks: 0,
       surges: 0,
       blanks: 0,
@@ -44,6 +45,7 @@ function createDefaultOutput(): T.AttackOutput {
     },
     defense: {
       forcedSaves: 0,
+      coverSaves: 0,
       blocks: 0,
       surges: 0,
       blanks: 0,
@@ -60,6 +62,12 @@ function createDefaultAttackSummary(): T.AttackSummary {
     attackSurge: [],
     forcedSaves: [],
     forcedSaveStats: {
+      mean: 1,
+      median: 1,
+      stddev: 1,
+    },
+    coverSaves: [],
+    coverSaveStats: {
       mean: 1,
       median: 1,
       stddev: 1,
@@ -114,6 +122,7 @@ export class DiceRoller {
   ): T.CombinedAttackOutput {
     // cumulative values
     const forcedSavesArray: number[] = [];
+    const coverSavesArray: number[] = [];
     const woundsArray: number[] = [];
     let firstAttackOutput = createDefaultOutput();
     const attackSummary = createDefaultAttackSummary();
@@ -149,15 +158,18 @@ export class DiceRoller {
         attackSummary.forcedSaves,
         output.defense.forcedSaves
       );
+      incrementArrayValue(attackSummary.coverSaves, output.defense.coverSaves);
       incrementArrayValue(attackSummary.blocks, output.defense.blocks);
       incrementArrayValue(attackSummary.defenseSurge, output.defense.surges);
       incrementArrayValue(attackSummary.wounds, output.defense.wounds);
       forcedSavesArray.push(output.defense.forcedSaves);
+      coverSavesArray.push(output.defense.coverSaves);
       woundsArray.push(output.defense.wounds);
     }
 
     attackSummary.attackCount = count;
     attackSummary.forcedSaveStats = computeStats(forcedSavesArray);
+    attackSummary.coverSaveStats = computeStats(coverSavesArray);
     attackSummary.woundStats = computeStats(woundsArray);
 
     let maxCount = Math.max(
@@ -166,6 +178,7 @@ export class DiceRoller {
     );
     maxCount = Math.max(maxCount, attackSummary.attackSurge.length);
     maxCount = Math.max(maxCount, attackSummary.forcedSaves.length);
+    maxCount = Math.max(maxCount, attackSummary.coverSaves.length);
     maxCount = Math.max(maxCount, attackSummary.blocks.length);
     maxCount = Math.max(maxCount, attackSummary.defenseSurge.length);
     maxCount = Math.max(maxCount, attackSummary.wounds.length);
@@ -194,6 +207,12 @@ export class DiceRoller {
         attackSummary.forcedSaves[i + 1] !== undefined
       ) {
         attackSummary.forcedSaves[i] = 0;
+      }
+      if (
+        attackSummary.coverSaves[i] === undefined &&
+        attackSummary.coverSaves[i + 1] !== undefined
+      ) {
+        attackSummary.coverSaves[i] = 0;
       }
       if (
         attackSummary.blocks[i] === undefined &&
@@ -507,16 +526,41 @@ export class DiceRoller {
   ) {
     // cover
     const effectiveCover = EC.getEffectiveCover(modifiedInput);
-    const effectiveCoverValue = EC.getCoverModification(
-      modifiedInput,
-      effectiveCover
-    );
-    if (effectiveCoverValue > 0) {
-      status.modificationMatrix.tryConvertResultCount(
-        T.AttackDieResult.Hit,
-        T.AttackDieResult.Miss,
-        effectiveCoverValue
+    if (effectiveCover !== T.Cover.None) {
+      let hitCount = status.modificationMatrix.getResultCount(
+        T.AttackDieResult.Hit
       );
+
+      // low profile: cancel 1 hit automatically before rolling cover dice
+      if (modifiedInput.defense.lowProfile && hitCount > 0) {
+        status.modificationMatrix.tryConvertResultCount(
+          T.AttackDieResult.Hit,
+          T.AttackDieResult.Miss,
+          1
+        );
+        status.defenseResult.coverSaves++;
+        hitCount--;
+      }
+
+      // roll 1 cover die per remaining hit
+      const coverDieColor = modifiedInput.defense.redCoverDice
+        ? T.DieColor.Red
+        : T.DieColor.White;
+      for (let c = 0; c < hitCount; c++) {
+        const coverResult = this.rollDefenseDie(coverDieColor);
+        const isSave =
+          coverResult === T.DefenseDieResult.Block ||
+          (effectiveCover === T.Cover.Heavy &&
+            coverResult === T.DefenseDieResult.Surge);
+        if (isSave) {
+          status.modificationMatrix.tryConvertResultCount(
+            T.AttackDieResult.Hit,
+            T.AttackDieResult.Miss,
+            1
+          );
+          status.defenseResult.coverSaves++;
+        }
+      }
     }
 
     // dodge tokens & high velocity

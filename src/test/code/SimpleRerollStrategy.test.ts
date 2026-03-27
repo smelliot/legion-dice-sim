@@ -233,7 +233,7 @@ describe("SimpleRerollStrategy", () => {
       reason,
       remaining
     );
-    expect(indexes).toStrictEqual([0, 1]);
+    expect(indexes).toStrictEqual(undefined);
   });
 
   it("prefers lethal when all can be converted, no pierce", () => {

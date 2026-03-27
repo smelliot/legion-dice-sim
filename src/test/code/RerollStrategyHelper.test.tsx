@@ -35,7 +35,7 @@ describe("RerollStrategyHelper", () => {
       expect(conversions.hitsToCrits).toEqual(0);
     });
 
-    it("handles not converting if less than cover", () => {
+    it("handles converting blank to hit with cover (no guaranteed saves)", () => {
       const input = T.createDefaultAttackInput();
       input.offense.redDice = 3;
       input.offense.marksman = true;
@@ -46,11 +46,11 @@ describe("RerollStrategyHelper", () => {
       };
 
       const conversions = RSH.getMarksmanConversions(input, 0, 0, rerolls);
-      expect(conversions.blanksToHits).toEqual(0);
+      expect(conversions.blanksToHits).toEqual(1);
       expect(conversions.hitsToCrits).toEqual(0);
     });
 
-    it("handles converting to crit if cannot convert to hits", () => {
+    it("handles converting blanks to hits with cover (no guaranteed saves)", () => {
       const input = T.createDefaultAttackInput();
       input.offense.redDice = 3;
       input.offense.marksman = true;
@@ -61,11 +61,11 @@ describe("RerollStrategyHelper", () => {
       };
 
       const conversions = RSH.getMarksmanConversions(input, 0, 0, rerolls);
-      expect(conversions.blanksToHits).toEqual(1);
-      expect(conversions.hitsToCrits).toEqual(1);
+      expect(conversions.blanksToHits).toEqual(2);
+      expect(conversions.hitsToCrits).toEqual(0);
     });
 
-    it("handles multiple crits if only one hit possible", () => {
+    it("handles converting all blanks to hits with cover (no guaranteed saves)", () => {
       const input = T.createDefaultAttackInput();
       input.offense.redDice = 3;
       input.offense.marksman = true;
@@ -76,8 +76,8 @@ describe("RerollStrategyHelper", () => {
       };
 
       const conversions = RSH.getMarksmanConversions(input, 0, 0, rerolls);
-      expect(conversions.blanksToHits).toEqual(2);
-      expect(conversions.hitsToCrits).toEqual(2);
+      expect(conversions.blanksToHits).toEqual(3);
+      expect(conversions.hitsToCrits).toEqual(0);
     });
 
     it("handles nightmare (Armor X - 1)", () => {
@@ -99,7 +99,7 @@ describe("RerollStrategyHelper", () => {
 
       const conversions = RSH.getMarksmanConversions(input, 0, 0, rerolls);
       expect(conversions.blanksToHits).toEqual(1);
-      expect(conversions.hitsToCrits).toEqual(1);
+      expect(conversions.hitsToCrits).toEqual(0);
     });
 
     it("handles nightmare (Armor X - 2)", () => {
@@ -121,7 +121,7 @@ describe("RerollStrategyHelper", () => {
 
       const conversions = RSH.getMarksmanConversions(input, 4, 0, rerolls);
       expect(conversions.blanksToHits).toEqual(1);
-      expect(conversions.hitsToCrits).toEqual(0);
+      expect(conversions.hitsToCrits).toEqual(1);
     });
 
     it("handles nightmare (Armor X - 3)", () => {
@@ -143,7 +143,7 @@ describe("RerollStrategyHelper", () => {
 
       const conversions = RSH.getMarksmanConversions(input, 3, 0, rerolls);
       expect(conversions.blanksToHits).toEqual(1);
-      expect(conversions.hitsToCrits).toEqual(0);
+      expect(conversions.hitsToCrits).toEqual(1);
     });
 
     it("handles nightmare (Armor X - 4)", () => {
@@ -228,8 +228,8 @@ describe("RerollStrategyHelper", () => {
       };
 
       const conversions = RSH.getMarksmanConversions(input, 3, 0, rerolls);
-      expect(conversions.blanksToHits).toEqual(0);
-      expect(conversions.hitsToCrits).toEqual(1);
+      expect(conversions.blanksToHits).toEqual(1);
+      expect(conversions.hitsToCrits).toEqual(0);
     });
 
     // TODO: Fix this test. (Test is correct, result is wrong.)
@@ -270,7 +270,7 @@ describe("RerollStrategyHelper", () => {
 
       const conversions = RSH.getMarksmanConversions(input, 5, 2, rerolls);
       expect(conversions.blanksToHits).toEqual(0);
-      expect(conversions.hitsToCrits).toEqual(2);
+      expect(conversions.hitsToCrits).toEqual(0);
     });
 
     it("handles nightmare (Armor - 1)", () => {
@@ -307,7 +307,7 @@ describe("RerollStrategyHelper", () => {
       };
 
       const conversions = RSH.getMarksmanConversions(input, 1, 0, rerolls);
-      expect(conversions.blanksToHits).toEqual(0);
+      expect(conversions.blanksToHits).toEqual(1);
       expect(conversions.hitsToCrits).toEqual(1);
     });
 
@@ -327,7 +327,7 @@ describe("RerollStrategyHelper", () => {
 
       const conversions = RSH.getMarksmanConversions(input, 2, 0, rerolls);
       expect(conversions.blanksToHits).toEqual(0);
-      expect(conversions.hitsToCrits).toEqual(2);
+      expect(conversions.hitsToCrits).toEqual(1);
     });
 
     it("handles nightmare (Armor - 4)", () => {

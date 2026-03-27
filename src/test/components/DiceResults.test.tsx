@@ -29,6 +29,7 @@ function createEmptyOutput(): T.CombinedAttackOutput {
         blocks: 0,
         surges: 0,
         blanks: 0,
+        coverSaves: 0,
         forcedSaves: 0,
         wounds: 0,
       },
@@ -42,6 +43,12 @@ function createEmptyOutput(): T.CombinedAttackOutput {
       defenseSurge: [],
       forcedSaves: [],
       wounds: [],
+      coverSaves: [],
+      coverSaveStats: {
+        mean: 0,
+        median: 0,
+        stddev: 0,
+      },
       forcedSaveStats: {
         mean: 0,
         median: 0,

@@ -200,7 +200,7 @@ describe("ArmorRerollStrategy", () => {
 
     expect(
       strategy.pickRerollDice(input, rolls, 2, RerollReason.AimToken, remaining)
-    ).toStrictEqual([0, 2]);
+    ).toStrictEqual(undefined);
   });
 
   it("prefers lethal when all can be converted, no pierce", () => {

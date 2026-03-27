@@ -79,6 +79,8 @@ export type DefenseInput = {
   surge: boolean;
   tokens: DefenseTokens;
   cover: Cover;
+  courage: number;
+  redCoverDice: boolean;
   armor: boolean;
   armorX: AbilityX;
   block: boolean;
@@ -117,6 +119,7 @@ export type AttackResult = {
 
 export type DefenseResult = {
   forcedSaves: number;
+  coverSaves: number;
   blocks: number;
   surges: number;
   blanks: number;
@@ -141,6 +144,8 @@ export type AttackSummary = {
   attackSurge: Array<number>;
   forcedSaves: Array<number>;
   forcedSaveStats: Stats;
+  coverSaves: Array<number>;
+  coverSaveStats: Stats;
   blocks: Array<number>;
   defenseSurge: Array<number>;
   wounds: Array<number>;
@@ -195,6 +200,8 @@ export function createDefaultAttackInput(): AttackInput {
         surge: 0,
       },
       cover: Cover.None,
+      courage: 1,
+      redCoverDice: false,
       armor: false,
       armorX: { active: false, value: 1 },
       block: false,
@@ -263,6 +270,8 @@ export function cloneAttackInput(original: AttackInput): AttackInput {
         surge: original.defense.tokens.surge,
       },
       cover: original.defense.cover,
+      courage: original.defense.courage,
+      redCoverDice: original.defense.redCoverDice,
       armor: original.defense.armor,
       armorX: copyAbilityX(original.defense.armorX),
       block: original.defense.block,

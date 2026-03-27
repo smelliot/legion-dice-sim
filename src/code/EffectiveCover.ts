@@ -1,14 +1,16 @@
 import * as T from "./Types";
 
-export function getCoverModification(
-  input: T.AttackInput,
-  cover: T.Cover
-): number {
-  const coverModifier =
-    cover === T.Cover.Heavy ? 2 : cover === T.Cover.Light ? 1 : 0;
-  return input.defense.lowProfile && coverModifier > 0
-    ? coverModifier + 1
-    : coverModifier;
+/**
+ * Returns a conservative estimate of guaranteed cover saves for reroll strategy heuristics.
+ * With the dice-based cover system, only Low Profile provides a guaranteed save.
+ * The cover dice themselves are probabilistic and not counted here.
+ */
+export function getGuaranteedCoverSaves(input: T.AttackInput): number {
+  const effectiveCover = getEffectiveCover(input);
+  if (effectiveCover === T.Cover.None) {
+    return 0;
+  }
+  return input.defense.lowProfile ? 1 : 0;
 }
 
 export function getEffectiveCover(input: T.AttackInput): T.Cover {
@@ -20,8 +22,8 @@ export function getEffectiveCover(input: T.AttackInput): T.Cover {
   // effective cover with modifications
   let effectiveCover = input.defense.cover;
 
-  // cover from surpression
-  if (input.defense.tokens.suppression > 0) {
+  // cover from suppression (only if suppression >= courage)
+  if (input.defense.tokens.suppression >= input.defense.courage) {
     if (effectiveCover == T.Cover.None) {
       effectiveCover = T.Cover.Light;
     } else if (effectiveCover == T.Cover.Light) {

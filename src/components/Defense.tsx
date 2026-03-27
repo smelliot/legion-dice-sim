@@ -53,6 +53,18 @@ function Defense(props: DefenseProps): React.JSX.Element {
           <option value="light">Light</option>
           <option value="heavy">Heavy</option>
         </select>
+        <span className="mx-2 my-auto drop-down-label">Courage:</span>
+        <select
+          value={props.input.courage}
+          className="rounded-lg mr-4 px-2"
+          onChange={(e) =>
+            props.eventHandlers.handleCourageChange(Number(e.target.value))
+          }
+        >
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+        </select>
       </div>
       <DefenseAbilities
         showSimpleView={props.showSimpleView}
