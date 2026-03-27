@@ -62,16 +62,13 @@ function ProfileSelectorDialog(
   }
 
   function getMaxCompatibleWeapons(unit: UP.UnitProfile): number {
-    let minRange = 0;
-    let maxRange: number | undefined = undefined;
-    let compatibleCount = 0;
     let maxCompatibleCount = 0;
 
     if (unit.weapons) {
       for (let i = 0; i < unit.weapons.length - maxCompatibleCount; i++) {
-        minRange = 0;
-        maxRange = undefined;
-        compatibleCount = 0;
+        let minRange = 0;
+        let maxRange: number | undefined = undefined;
+        let compatibleCount = 0;
 
         for (let j = i; j < unit.weapons.length; j++) {
           const weapon = unit.weapons[j];

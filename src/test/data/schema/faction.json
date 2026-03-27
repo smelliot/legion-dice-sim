@@ -1,13 +1,8 @@
 {
-    "$id": "http://www.legiondice.com/schemas/faction",
-    "definitions": {
-        "faction": {
-            "enum": [
-                "rebel",
-                "empire",
-                "separatist",
-                "republic"
-            ]
-        }
+  "$id": "http://www.legiondice.com/schemas/faction",
+  "definitions": {
+    "faction": {
+      "enum": ["rebel", "empire", "separatist", "republic"]
     }
+  }
 }

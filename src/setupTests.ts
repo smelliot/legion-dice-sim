@@ -10,5 +10,7 @@ const mockJQuery = Object.assign(
     fn: {},
   }
 );
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (global as any).$ = mockJQuery;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (global as any).jQuery = mockJQuery;

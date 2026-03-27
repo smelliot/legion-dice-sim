@@ -16,9 +16,6 @@ class SimpleRerollStrategy implements RS.RerollStrategy {
     const dmm = new DiceModificationMatrix(rolls);
     const effectiveCover = EC.getEffectiveCover(input);
     const coverModifier = EC.getCoverModification(input, effectiveCover);
-    let rerollMiss = 0;
-    let rerollHit = 0;
-
     // convert surges
     if (input.offense.surge === T.AttackSurgeConversion.Critical) {
       dmm.tryConvertResultCount(
@@ -86,7 +83,7 @@ class SimpleRerollStrategy implements RS.RerollStrategy {
     }
 
     // calculate dice  that can be rerolled
-    rerollMiss = Math.min(
+    let rerollMiss = Math.min(
       rerollDiceCount,
       dmm.getResultCount(T.AttackDieResult.Miss)
     );
@@ -94,7 +91,7 @@ class SimpleRerollStrategy implements RS.RerollStrategy {
     const totalCrits = dmm.getResultCount(T.AttackDieResult.Critical);
     const totalHits = dmm.getResultCount(T.AttackDieResult.Hit);
 
-    rerollHit = 0;
+    let rerollHit = 0;
     if (rerollMiss < rerollDiceCount) {
       const possibleHits = Math.min(
         rolls.length - totalCrits,

@@ -20,13 +20,11 @@ import ProfileSelectorDialog from "./profiles/ProfileSelectorDialog";
 
 import { Telemetry } from "../tools/Telemetry";
 
-class App extends React.Component<any, AS.AppState> {
-  // eslint-disable-line @typescript-eslint/no-explicit-any
+class App extends React.Component<Record<string, never>, AS.AppState> {
   private _stateManager: AS.AppStateManager;
   private _diceResultsRef: React.RefObject<DiceResults | null>;
 
-  constructor(props: any) {
-    // eslint-disable-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
+  constructor(props: Record<string, never>) {
     super(props);
 
     this._stateManager = new AS.AppStateManager((newState: AS.AppState) =>

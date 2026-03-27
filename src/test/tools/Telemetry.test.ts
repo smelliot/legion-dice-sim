@@ -10,6 +10,8 @@ describe("Telemetry", () => {
   });
 
   it("logError does not throw", () => {
-    expect(() => Telemetry.logError("file", "myFunction", "test error")).not.toThrow();
+    expect(() =>
+      Telemetry.logError("file", "myFunction", "test error")
+    ).not.toThrow();
   });
 });

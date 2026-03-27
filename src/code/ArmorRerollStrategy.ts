@@ -16,8 +16,6 @@ class ArmorRerollStrategy implements RS.RerollStrategy {
     const dmm = new DiceModificationMatrix(rolls);
     const effectiveCover = EC.getEffectiveCover(input);
     const coverModifier = EC.getCoverModification(input, effectiveCover);
-    let rerollMiss = 0;
-
     // convert surges
     if (input.offense.surge === T.AttackSurgeConversion.Critical) {
       dmm.tryConvertResultCount(
@@ -109,7 +107,7 @@ class ArmorRerollStrategy implements RS.RerollStrategy {
     );
 
     // calculate misses that can be rerolled
-    rerollMiss = Math.min(
+    let rerollMiss = Math.min(
       rerollDiceCount,
       dmm.getResultCount(T.AttackDieResult.Miss)
     );

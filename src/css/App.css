@@ -4,14 +4,17 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: large; }
+  font-size: large;
+}
 
 .drop-down-label {
-  font-size: large; }
+  font-size: large;
+}
 
 select {
   height: 30px;
-  margin: auto 0; }
+  margin: auto 0;
+}
 
 .popover-button {
   display: flex;
@@ -21,4 +24,5 @@ select {
   background-size: 85%;
   background-position-x: 2px;
   background-position-y: 2px;
-  background-image: url("../img/question-circle.svg"); }
+  background-image: url("../img/question-circle.svg");
+}

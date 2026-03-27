@@ -17,12 +17,12 @@ select {
 }
 
 .popover-button {
-    display: flex;
-    height: 28px;
-    width: 28px;
-    background-repeat: no-repeat;
-    background-size: 85%;
-    background-position-x: 2px;
-    background-position-y: 2px;
-    background-image: url('../img/question-circle.svg');
+  display: flex;
+  height: 28px;
+  width: 28px;
+  background-repeat: no-repeat;
+  background-size: 85%;
+  background-position-x: 2px;
+  background-position-y: 2px;
+  background-image: url("../img/question-circle.svg");
 }

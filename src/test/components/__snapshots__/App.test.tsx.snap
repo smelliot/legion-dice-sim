@@ -10,17 +10,7 @@ exports[`App handles simple view 1`] = `
     >
       <a
         class="navbar-brand"
-        href="https://www.facebook.com/legionFNF"
-        title="Friday Night Fights"
-      >
-        <img
-          alt="Friday Night Fights"
-          class="fnf-logo d-inline-block my-auto mx-2"
-        />
-      </a>
-      <a
-        class="navbar-brand"
-        href="https://github.com/Michael-S-Hammond/legion-dice-sim"
+        href="https://github.com/smelliot/legion-dice-sim"
         title="GitHub code and bugs"
       >
         <svg
@@ -2018,17 +2008,7 @@ exports[`App matches the snapshot 1`] = `
     >
       <a
         class="navbar-brand"
-        href="https://www.facebook.com/legionFNF"
-        title="Friday Night Fights"
-      >
-        <img
-          alt="Friday Night Fights"
-          class="fnf-logo d-inline-block my-auto mx-2"
-        />
-      </a>
-      <a
-        class="navbar-brand"
-        href="https://github.com/Michael-S-Hammond/legion-dice-sim"
+        href="https://github.com/smelliot/legion-dice-sim"
         title="GitHub code and bugs"
       >
         <svg
